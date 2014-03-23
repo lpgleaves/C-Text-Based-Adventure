@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int battle ()
+{
+int win = 1;
+char name[25];
+char monster[25];
+int monsterHP = 10;
+int monsterATK = 2;
+int HP = 50;
+char battlechoice;
+int meleeattack = 5;
+int magicattack = 10;
+int run = 0;
+scanf("%[^\n]s",name);
+scanf(" %[^\n]s",monster);
+printf("%s encounters a wild %s with %d HP\n",name, monster,monsterHP);
+while (monsterHP > 0 )
+{
+    printf("Press 'a' to melee attack or 'm' to use magic.\n");
+    scanf(" %c",&battlechoice);
+    switch (battlechoice)
+    {
+    case 'a':
+        {
+        monsterHP= monsterHP - meleeattack;
+        break;
+        }
+    case 'm':
+        {
+        monsterHP =  monsterHP - magicattack;
+        break;
+        }
+    }
+    printf("The %s has %d HP.\n",monster,monsterHP);
+    if (monsterHP > 0)
+    {
+    printf("The %s attacks for %d damage!\n",monster,monsterATK);
+    HP = HP - monsterATK;
+    printf("Your HP is now %d\n",HP);
+    }
+}
+return(win);
+}
+int main()
+{
+    int win,skill;
+    skill = 2;
+    int EXP = 0;
+    win = battle();
+    if (win == 1)
+    {
+    EXP = EXP + skill;
+    win = 2;
+    }
+    else if (win == 0)
+    {
+    printf("You ran like a bitch.\n");
+    win = 2;
+    }
+    printf("Your EXP is %d\n",EXP);
+    return(0);
+}
