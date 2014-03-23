@@ -4,7 +4,7 @@ int location[9][9], i, j, x, current, r, c;
 char direction;
 x = 1;
 
-for(i = 0; i < 9; ++i)      //this part makes a 5x8 matrix labeled 1 to 40
+for(i = 0; i < 9; ++i)      //this part makes a 10x10 matrix labeled 1 to 100
 {
     for(j = 0; j < 9; ++j)
     {
@@ -63,6 +63,7 @@ switch (direction) {
     case 'X' :
         break;
     }
+
 } while (direction != 'X');
 return(0);
 }
