@@ -1,0 +1,68 @@
+#include <stdio.h>
+int main() {
+int location[9][9], i, j, x, current, r, c;
+char direction;
+x = 1;
+
+for(i = 0; i < 9; ++i)      //this part makes a 5x8 matrix labeled 1 to 40
+{
+    for(j = 0; j < 9; ++j)
+    {
+        location[i][j] = x;
+        x++;
+    }
+}
+
+for(i = 0; i < 9; ++i)      //this is just printing it to show you, won't happen in-game, obviously
+{
+    for(j = 0; j < 9; ++j)
+    {
+        printf("%d\t", location[i][j]);
+    }
+        printf("\n");
+}
+
+r = 2;      //we start in 3rd row
+c = 6;      //we start in 7th column
+
+do {
+current = location[r][c];
+printf("\nYour current location is %d", current);
+printf("\nWhoever's testing: press X to exit");
+printf("\nWhat direction would you like to go (N/S/E/W)? ");
+scanf("%c", &direction);
+direction = toupper(direction);     //toupper just makes sure the character is uppercase so it doesn't mess with the code
+getchar();
+switch (direction) {
+    case 'N' :
+        if (current > 10) {
+        r = r - 1;
+        }
+        else {
+        printf("\nSorry, you can't go north from here. Try another direction. (E/S/W) ");
+        }
+        break;
+    case 'S' :
+        if (current < 73) {
+        r = r + 1; }
+        else {
+        printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) "); }
+        break;
+    case 'E' :
+        if ((current % 9) != 0) {
+        c = c + 1; }
+        else {
+        printf("\nSorry, you can't go east from here. Try another direction. (N/S/W) "); }
+        break;
+    case 'W' :
+        if (((current - 1) % 9) != 0) {
+        c = c - 1; }
+        else {
+        printf("\nSorry, you can't go west from here. Try another direction. (N/E/S) "); }
+        break;
+    case 'X' :
+        break;
+    }
+} while (direction != 'X');
+return(0);
+}
