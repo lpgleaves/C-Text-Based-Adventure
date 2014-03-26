@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <ctype.h>
+
+void findring();
+void quest(int a);
+
+int main()
+{
+    int location[4][4], i, j, x, current, r, c;
+    char direction;
+    x = 1;
+    
+    for(i = 0; i < 4; ++i)      //this part makes a 5x8 matrix labeled 1 to 40
+    {
+        for(j = 0; j < 4; ++j)
+        {
+            location[i][j] = x;
+            x++;
+        }
+    }
+    
+    for(i = 0; i < 4; ++i)      //this is just printing it to show you, won't happen in-game, obviously
+    {
+        for(j = 0; j < 4; ++j)
+        {
+            printf("%d\t", location[i][j]);
+        }
+        printf("\n");
+    }
+    
+    r = 0;      //we start in 3rd row
+    c = 0;      //we start in 7th column
+    
+    
+    do {
+        current = location[r][c];
+        quest(current);
+        printf("\nYour current location is %d", current);
+        printf("\nWhoever's testing: press X to exit");
+        printf("\nWhat direction would you like to go (N/S/E/W)? ");
+        scanf("%c", &direction);
+        direction=toupper(direction);     //toupper just makes sure the character is uppercase so it doesn't mess with the code
+        getchar();
+        
+        switch (direction)
+        {
+            case 'N' :
+                if (current > 5) {
+                    r = r - 1;
+                }
+                else {
+                    printf("\nSorry, you can't go north from here. Try another direction. (E/S/W) ");
+                }
+                break;
+            case 'S' :
+                if (current<13) {
+                    r=r+1; }
+                else {
+                    printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) "); }
+                break;
+            case 'E' :
+                if ((current%4)!=0) {
+                    c=c+1; }
+                else {
+                    printf("\nSorry, you can't go east from here. Try another direction. (N/S/W) "); }
+                break;
+            case 'W' :
+                if (((current - 1) % 4)!=0) {
+                    c = c - 1; }
+                else {
+                    printf("\nSorry, you can't go west from here. Try another direction. (N/E/S) "); }
+                break;
+            case 'X' :
+                break;
+                
+        }
+        
+        
+    
+    } while (direction!='X');
+    
+    return(0);
+    
+}
+
+
+void quest(int a)
+{
+    int completeQ1=0;
+    
+    if (a==7 && completeQ1!=1)
+    {
+        completeQ1=1;
+        findring();
+        return;
+    }
+    else if (a==14 && completeQ1==1)
+    {
+        printf("\nYou found the boss.\n");
+    }
+}
+
+void findring()
+{
+    printf("\nYou found the ring!\n");
+    return;
+}
