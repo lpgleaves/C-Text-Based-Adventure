@@ -1,0 +1,16 @@
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mHP;
+    int mATK;
+    int mskill;
+    char mname[25];
+};
+
+int main()
+{
+monsters elf = {10,5,5,"Elf"};
+printf("%d %d %d %s",elf.mHP,elf.mATK,elf.mskill,elf.mname);
+return 0;
+}
