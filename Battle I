@@ -1,21 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int battle ()
+#include <string.h>
+#include <time.h>
+int monsterHP()
 {
+
+}
+int monsterSkill()
+{
+
+}
+int monsterATK()
+{
+
+}
+char monsterName()
+{
+
+}
+int battle (int HPIn, int MagicIn, int ATKIn, int MGenIn, int MSkillIn, int MHPin, int MATKin)
+{
+int EXPadd;
 int win = 1;
-char name[25];
-char monster[25];
-int monsterHP = 10;
-int monsterATK = 2;
-int HP = 50;
+char monster[25] = "Fuckin Group B";
+int monsterHP = MHPin;
+int monsterATK = MATKin;
+int HP = HPIn;
+int mskill = MSkillIn;
 char battlechoice;
-int meleeattack = 5;
-int magicattack = 10;
-int run = 0;
-scanf("%[^\n]s",name);
-scanf(" %[^\n]s",monster);
-printf("%s encounters a wild %s with %d HP\n",name, monster,monsterHP);
+int meleeattack = ATKIn;
+int magicattack = MagicIn;
+printf("You encounter a wild %s with %d HP\n",monster,monsterHP);
 while (monsterHP > 0 )
 {
     printf("Press 'a' to melee attack or 'm' to use magic.\n");
@@ -41,23 +56,76 @@ while (monsterHP > 0 )
     printf("Your HP is now %d\n",HP);
     }
 }
-return(win);
+    if (win == 1)
+    {
+    printf("You have defeated the %s.\n",monster);
+    EXPadd = mskill;
+    }
+    else if (win == 0)
+    EXPadd = 0;
+return(EXPadd);
+}
+
+int monsterGen ()
+{
+    int monsternumber;
+    srand(time(NULL));
+    monsternumber = rand()%15;
+    return(monsternumber);
 }
 int main()
 {
-    int win,skill;
-    skill = 2;
+    char Hero[25];
+    scanf("%[^\n]s",Hero);
+    int HP;
+    int Magic;
+    int ATK;
     int EXP = 0;
-    win = battle();
-    if (win == 1)
+    int mGen = monsterGen();
+    int mATK = monsterATK(mGen);
+    int mskill = monsterSkill(mGen);
+    int mHP = monsterHP(mGen);
+    char hclass;
+    scanf(" %c",&hclass);
+    hclass = toupper(hclass);
+    switch (hclass)
     {
-    EXP = EXP + skill;
-    win = 2;
+    case 'C':
+    HP = 20;
+    ATK = 5;
+    Magic = 5;
+    break;
+    case 'I':
+    HP = 10;
+    ATK = 5;
+    Magic = 10;
+    break;
+    case 'K':
+    HP = 10;
+    ATK = 10;
+    Magic = 5;
+    break;
     }
-    else if (win == 0)
+    EXP = EXP + battle(HP,Magic,ATK,mGen,mskill,mHP,mATK);
+    if (EXP >= 10)
     {
-    printf("You ran like a bitch.\n");
-    win = 2;
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP);
+    EXP = EXP + battle(HP,Magic,ATK,mGen,mskill,mHP,mATK);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
     }
     printf("Your EXP is %d\n",EXP);
     return(0);
