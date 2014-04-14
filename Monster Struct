@@ -1,19 +1,29 @@
 #include <stdio.h>
+
 typedef struct monsters monsters;
 struct monsters
 {
     int mHP;
     int mATK;
     int mskill;
-    char mname[25];
+    char mname[50];
 };
 
 int main()
 {
-monsters elf = {10,5,5,"Elf"};
-printf("%d %d %d %s",elf.mHP,elf.mATK,elf.mskill,elf.mname);
+monsters rock = {10,1,5,"A small rock"};
+monsters flytrap={5,3,5,"A Venus Flytrap"};
+monsters bluescreen={100,0,25,"The Blue Screen of Death"};
+monsters killerrabbit={15,20,100,"A small rabbit, with a killer streak a mile wide"};
+monsters blackknight={100,10,60,"The Black Knight-'Tis But a Scratch!"};
+monsters zombie={25,10,30,"The Walking Dead"};
+monsters satan={1000000,200,1000,"Literally Satan. The devil. Hell incarnate."};
+monsters whitegirls={50,2,20,"A wild pack of drunk white girls"};
+monsters moon={1000,20,100,"The moon. The hunk of rock past the atmosphere."};
+monsters mastering={200,18,50,"MasteringPhysics.com."};
 return 0;
 }
+
 
 #include <stdio.h>
 typedef struct monsters monsters;
