@@ -14,3 +14,124 @@ monsters elf = {10,5,5,"Elf"};
 printf("%d %d %d %s",elf.mHP,elf.mATK,elf.mskill,elf.mname);
 return 0;
 }
+
+Gabriel Eum Monster struct
+
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mhealth;
+    int mattack;
+    int mskill;
+    char mname[20];
+};
+
+int main()
+{
+    monsters pikachu = {6,3,3,"Pikachu"};
+    printf("Name= %s, Health= %d, Thunderbolt= %d, Skill= %d",pikachu.mname, pikachu.mhealth,pikachu.mattack,pikachu.mskill);
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mhealth;
+    int mattack;
+    int mskill;
+    char mname[20];
+};
+
+int main()
+{
+    monsters mew = {12,7,5,"Mew"};
+    printf("Name= %s, Health= %d, Psyche= %d, Skill= %d",mew.mname, mew.mhealth,mew.mattack,mew.mskill);
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mhealth;
+    int mattack;
+    int mskill;
+    char mname[20];
+};
+
+int main()
+{
+    monsters zubat = {2,0.5,0.25,"Zubat"};
+    printf("Name= %s, Health= %d, Screech= %d, Skill= %d",zubat.mname, zubat.mhealth,zubat.mattack,zubat.mskill);
+    return 0;
+}
+
+
+
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mhealth;
+    int mattack;
+    int mskill;
+    char mname[20];
+};
+
+int main()
+{
+    monsters squirtle = {2,1,1,"Squirtle"};
+    printf("Name= %s, Health= %d, Watergun= %d, Skill= %d",squirtle.mname, squirtle.mhealth,squirtle.mattack,squirtle.mskill);
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mhealth;
+    int mattack;
+    int mskill;
+    char mname[20];
+};
+
+int main()
+{
+    monsters charizard = {8,6,7,"Charizard"};
+    printf("Name= %s, Health= %d, Flamethrower= %d, Skill= %d",charizard.mname, charizard.mhealth,charizard.mattack,charizard.mskill);
+    return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+typedef struct monsters monsters;
+struct monsters
+{
+    int mhealth;
+    int mattack;
+    int mskill;
+    char mname[20];
+};
+
+int main()
+{
+    monsters jynx = {8,6,7,"Jynx"};
+    printf("Name= %s, Health= %d, Humiliate= %d, Skill= %d",jynx.mname, jynx.mhealth,jynx.mattack,jynx.mskill);
+    return 0;
+}
+
