@@ -22,16 +22,27 @@ monsters whitegirls={50,2,20,"A wild pack of drunk white girls"};
 monsters moon={1000,20,100,"The moon. The hunk of rock past the atmosphere."};
 monsters mastering={200,18,50,"MasteringPhysics.com."};
 
-monsters DM = {30,40,20, "Dark Magician"}
-monsters BEWD = {20,20,30, "Blue Eyes White Dragon"}
-monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"}
-monsters GSS = {400,10,20, "Giant Soldier of Stone"}
-monsters NMS = {20,25,15, "Neo the Magic Swordsman"}
-monsters EFO = {50,50,50, "Exodia the Forbidden One"}
-monsters DMG = {30,30,20, "Dark Magician Girl"}
-monsters SG = {10,10,20, "Scapegoat"}
-monsters SD = {30,30,30, "Stardust Dragon"}
-monsters CD = {20,20,20, "Cyber Dragon"}
+monsters DM = {30,40,20, "Dark Magician"};
+monsters BEWD = {20,20,30, "Blue Eyes White Dragon"};
+monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"};
+monsters GSS = {400,10,20, "Giant Soldier of Stone"};
+monsters NMS = {20,25,15, "Neo the Magic Swordsman"};
+monsters EFO = {50,50,50, "Exodia the Forbidden One"};
+monsters DMG = {30,30,20, "Dark Magician Girl"};
+monsters SG = {10,10,20, "Scapegoat"};
+monsters SD = {30,30,30, "Stardust Dragon"};
+monsters CD = {20,20,20, "Cyber Dragon"};
+
+monsters jynx = {8,6,7,"Jynx"};
+monsters pikachu = (5,2,3,"Pikachu"};
+monsters zubat = {2,1,1,"Zubat"};
+monsters mewtwo = {19,15,18,"Mewtwo"};
+monsters squirtle = {6,4.5,"Squirtle"};
+monsters charizard = {7,6,9,"Charizard"};
+monsters hitmonlee = {12,9,8,"Hitmonlee"};
+monsters ash = {28,23,17,"Ash"};
+monsters brock = {24,17,10,"Brock"};
+monsters misty = {20,16,14,"Misty"};
 return 0;
 }
 
