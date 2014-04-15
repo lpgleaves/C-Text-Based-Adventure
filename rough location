@@ -1,3 +1,5 @@
+//Lydia Gleaves
+
 #include <stdio.h>
 int main() {
 int location[9][9], i, j, x, current, r, c;
