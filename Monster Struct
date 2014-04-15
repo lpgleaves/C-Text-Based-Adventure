@@ -21,6 +21,17 @@ monsters satan={1000000,200,1000,"Literally Satan. The devil. Hell incarnate."};
 monsters whitegirls={50,2,20,"A wild pack of drunk white girls"};
 monsters moon={1000,20,100,"The moon. The hunk of rock past the atmosphere."};
 monsters mastering={200,18,50,"MasteringPhysics.com."};
+
+monsters DM = {30,40,20, "Dark Magician"}
+monsters BEWD = {20,20,30, "Blue Eyes White Dragon"}
+monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"}
+monsters GSS = {400,10,20, "Giant Soldier of Stone"}
+monsters NMS = {20,25,15, "Neo the Magic Swordsman"}
+monsters EFO = {50,50,50, "Exodia the Forbidden One"}
+monsters DMG = {30,30,20, "Dark Magician Girl"}
+monsters SG = {10,10,20, "Scapegoat"}
+monsters SD = {30,30,30, "Stardust Dragon"}
+monsters CD = {20,20,20, "Cyber Dragon"}
 return 0;
 }
 
