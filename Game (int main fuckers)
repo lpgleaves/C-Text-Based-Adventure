@@ -1,0 +1,539 @@
+#include<stdio.h>
+#include<string.h>
+
+char string[200];
+int HP;
+int Magic;
+int ATK;
+char Hero[50];
+void map();
+
+
+int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
+{
+    int EXPadd;
+    int win = 1;
+    char monster[25];
+    memcpy(monster,MNameIn,25);
+    int monsterHP = MHPin;
+    int monsterATK = MATKin;
+    int mskill = MSkillIn;
+    char battlechoice;
+    int meleeattack = ATK;
+    int magicattack = Magic;
+    printf("You encounter a wild %s with %d HP\n",monster,monsterHP);
+
+    do
+    {
+        printf("Press 'a' to melee attack or 'm' to use magic.\n");
+        scanf(" %c",&battlechoice);
+        switch (battlechoice)
+            {
+                case 'a':
+                    {
+                        monsterHP= monsterHP - meleeattack;
+                        break;
+                    }
+
+                case 'm':
+                    {
+                        monsterHP =  monsterHP - magicattack;
+                        break;
+                    }
+            }
+        printf("The %s has %d HP.\n",monster,monsterHP);
+        if (monsterHP > 0)
+            {
+                printf("The %s attacks for %d damage!\n",monster,monsterATK);
+                HP = HP - monsterATK;
+                printf("Your HP is now %d\n",HP);
+            }
+        if (HP < 0)
+            {
+        win = 0;
+            }
+    } while (monsterHP > 0 && HP > 0);
+    if (win == 1)
+    {
+        printf("You have defeated the %s.\n",monster);
+        EXPadd = mskill;
+    }
+    else if (win == 0)
+    EXPadd = 0;
+return(EXPadd);
+}
+
+
+
+void part1()
+{
+    int i, j, x, current, r, c, completeQ = 0;
+    int location[4][4];
+    char direction;
+    void map()
+{
+    int i,j;
+    for(i = 0; i < 4; ++i)
+    {
+        for(j = 0; j < 4; ++j)
+        {
+            printf("%d\t",location[i][j]);
+        }
+        printf("\n");
+    }
+}
+    x = 1;
+    for(i = 0; i < 4; ++i)
+    {
+        for(j = 0; j < 4; ++j)
+        {
+            location[i][j] = x;
+            x++;
+        }
+    }
+    r = 0;
+    c = 0;
+    do {
+        current = location[r][c];
+        if (completeQ==2)
+        {
+            break;
+        }
+        map();
+        switch (current)
+{
+case 1:
+{
+printf("\nYou begin your journey in a small town in the northwest corner of the world. ");
+printf("\nThere is literally nothing to the North or the West. I promise. ");
+printf("\nTo the South there is a river. ");
+printf("\nTo the East there is a valley. ");
+break;
+}
+case 2:
+{
+printf("\nYou stand in a valley. ");
+printf("\nYou are attacked!");
+//battle
+printf("\nYou stand in a valley in a pool of the goblin's blood.");
+printf("\nTo the South there is a hill. ");
+printf("\nTo the East there is a huge tree. ");
+printf("\nTo the West there is a small town.");
+break;
+}
+case 3:
+{
+printf("\nYou stand next to a massive tree.");
+printf("\nThe tree grants you life!");
+//HP +5
+printf("\nTo the South there are some flowers. ");
+printf("\nTo the East there is a dark forest. ");
+printf("\nTo the West there is a valley. ");
+break;
+}
+case 4:
+{
+printf("\nYou stand in the forest. ");
+printf("\nYou are attacked!");
+//battle
+printf("\nYou stand in the forest.");
+printf("\nTo the South there is a tower. ");
+printf("\nTo the West there is a huge tree. ");
+break;
+}
+case 5:
+{
+printf("\nYou stand next to a gently flowing river. ");
+printf("\nTo the South there is a lake. ");
+printf("\nTo the East there is a hill. ");
+break;
+}
+case 6:
+{
+printf("\nYou stand on a hill. ");
+printf("\nYou are attacked!");
+//battle
+printf("\nYou stand on a hill.");
+printf("\nTo the North there is a valley. ");
+printf("\nTo the South there is a hut. ");
+printf("\nTo the East there are some flowers. ");
+printf("\nTo the West there is a river. ");
+break;
+}
+case 7:
+{
+printf("\nYou stand in a field of beautiful flowers.");
+printf("\nTo the North there is a huge tree. ");
+printf("\nTo the South there are some rocks. ");
+printf("\nTo the East there is a tower. ");
+printf("\nTo the West there is a hill. ");
+break;
+}
+case 8:
+{
+printf("\nYou enter the tower.");
+//puzzle
+printf("\nYou exit the tower.");
+printf("\nTo the North there is a forest. ");
+printf("\nTo the South there is a cave. ");
+printf("\nTo the West there are some flowers. ");
+break;
+}
+case 9:
+{
+printf("\nYou stand next to a deep blue lake.");
+printf("\nTo the North there is a river. ");
+printf("\nTo the South there is a waterfall. ");
+printf("\nTo the East there is a hut. ");
+break;
+}
+case 10:
+{
+printf("\nYou enter the hut.");
+//puzzle answer
+printf("\nYou exit the hut.");
+printf("\nTo the North there is a hill. ");
+printf("\nTo the South there is an impassable mountain range. ");
+printf("\nTo the East there are some rocks. ");
+printf("\nTo the West there is a lake. ");
+break;
+}
+case 11:
+{
+printf("\nYou stand on some rocks. ");
+printf("\nYou are attacked!");
+//battle w/ Geodude
+printf("\nYou stand on some rocks.");
+printf("\nTo the North there are some flowers. ");
+printf("\nTo the South there is an impassable mountain range. ");
+printf("\nTo the East there is a cave. ");
+printf("\nTo the West there is a hut. ");
+break;
+}
+case 12:
+{
+printf("\nYou enter the cave.");
+//Cave stuff, need key to get in
+printf("\nYou exit the cave.");
+printf("\nTo the North there are some flowers. ");
+printf("\nTo the South there is an impassable mountain range. ");
+printf("\nTo the East there is a cave. ");
+printf("\nTo the West there is a hut. ");
+break;
+}
+case 13:
+{
+printf("\nYou walk through the waterfall and find a small cave.");
+printf("\nThere is a long string of handkerchiefs tied together.");
+printf("\nYou gain Magic!");
+//Magic +5
+printf("\nYou may only go North from here, back to the lake. ");
+break;
+}
+}
+        printf("\nWhat direction would you like to go (N/S/E/W)? ");
+        scanf("%c", &direction);
+        direction=toupper(direction);
+        getchar();
+        switch (direction)
+        {
+            case 'N' :
+                if (current > 5) {
+                    r = r - 1;
+                }
+                else {
+                    printf("\nSorry, you can't go north from here. Try another direction. (E/S/W) ");
+                }
+                break;
+            case 'S' :
+                if (current<13) {
+                    r=r+1; }
+                else {
+                    printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) "); }
+                break;
+            case 'E' :
+                if ((current%4)!=0) {
+                    c=c+1; }
+                else {
+                    printf("\nSorry, you can't go east from here. Try another direction. (N/S/W) "); }
+                break;
+            case 'W' :
+                if (((current - 1) % 4)!=0) {
+                    c = c - 1; }
+                else {
+                    printf("\nSorry, you can't go west from here. Try another direction. (N/E/S) "); }
+                break;
+            case 'X' :
+                break;
+        }
+    } while (direction!='X');
+    return;
+}
+
+
+typedef struct monsters monsters;
+struct monsters
+{
+    int mHP;
+    int mATK;
+    int mskill;
+    char mname[25];
+};
+
+
+
+
+
+int main()
+{
+    int counter;
+    char answer;
+    printf("Welcome to your adventure!\n\n");
+    printf("Press enter to get started");
+    scanf("%c", string);
+
+    printf("\n\n\n");
+    printf("Instructions:\n");
+    printf("This is a journey that will test you on many levels\n");
+    printf("Your skill with a blade, cunning, ingenuity, and ability to follow incredibly\neasy on-screen instructions will all be tested\n\n");
+
+    printf("Are you ready to begin? (Y for yes, N for being a coward)\n");
+    scanf("%c", &answer);
+
+    if(answer=='N')
+    {
+        printf("You don't get to say no\n");
+    }
+
+    printf("\n\n");
+    printf("We begin in the forest......(Press Enter to continue)");
+    scanf("%c", string);
+    printf("\n(Life Hack: Press Enter after text to advance the story. Such as now)\n");
+    scanf("%c", string);
+
+
+
+    printf("Sunlight peeks through the trees\n");
+    scanf("%c", string);
+    printf("The day began a few hours ago, but the light has only just come over the\nmountains\n");
+    scanf("%c", string);
+    printf("The darkness of the forest fades ever so slightly and you roll awake\n");
+    scanf("%c", string);
+    printf("Slowly you rise and roll up your modest sleeping pad\n");
+    scanf("%c", string);
+    printf("Daylight barely makes your old, rough shield glitter and your sword feels heavy around your waist, but you journey to rescue your beloved, who was snatched fromyour very arms by the evil warlord from beyond the mountains\n");
+    scanf("%c", string);
+    printf("There is no time for weakness, only progress\n");
+    scanf("%c", string);
+    printf("VMMM!!!!\n");
+    scanf("%c", string);
+    printf("An arrow hits the tree next to you! An enemy scout! Prepare for battle!\n");
+    scanf("%c", string);
+    printf("The enemy appears strong but you have your trusty skills as a ____ to aid you\n");
+
+
+    printf("\n\nClass Options:\n");
+    printf("   C)   Chef (extra Health)\n");
+    printf("   I)	Illusionist (extra Magic)\n");
+    printf("   K)	Kamikaze (extra Attack)\n\n");
+    printf("Which class would you like to be? : ");
+
+    char hclass;
+    int HP;
+    int Magic;
+    int ATK;
+    int EXP = 0;
+    hclass = toupper(hclass);
+
+    scanf("%c", &hclass);
+        switch (hclass)
+        {
+        case 'C':
+        HP = 20;
+        ATK = 5;
+        Magic = 5;
+        printf("\n<You're a chef. Fry this sucker>\n");
+        break;
+
+        case 'I':
+        HP = 10;
+        ATK = 5;
+        Magic = 10;
+        printf("\n<You're an Illusionist. Beat this guy up>\n");
+        break;
+
+        case 'K':
+        HP = 10;
+        ATK = 10;
+        Magic = 5;
+        printf("\n<You're a Kamikaze. Win>\n");
+        break;
+        }
+
+    monsters scout = {10,5,5,"Scout"};
+    battle(scout.mskill,scout.mHP,scout.mATK,scout.mname);
+    printf("You won! Huzzah!\n");
+    printf("Now would be a good time to enter your name: ");
+
+    scanf(" %[^\n]s",Hero);
+    printf("Congrats on having a name now bro. Your name is %s \n", Hero);
+
+    printf("\n\nThe Evil Lord's forces grow bolder by the day\n");
+    scanf("%c", string);
+    printf("You have traveled for weeks and have never been this far from home before");
+    scanf("%c", string);
+    printf("\nThe Kingdom of the Mushroom has been at peace since before you born");
+    scanf("%c", string);
+    printf("\nThere has never been any reason to leave...until now...");
+    scanf("%c", string);
+    printf("\nHowever, that delicate peace hangs in the balance as skirmishes have broken out along the border");
+    scanf("%c", string);
+    printf("\nThe Dark Lord had the audacity to show his face in your Kingdom’s Capitol to \nissue his ultimatum of war");
+    scanf("%c", string);
+    printf("\nThen he kidnapped your wife from you in the street...");
+    scanf("%c", string);
+    printf("\nSeriously it was for no reason......");
+    scanf("%c", string);
+    printf("\nYou didn't even know the guy...");
+    scanf("%c", string);
+    printf("\nBut then he vanished with her as a show of force\n");
+    printf("So now you journey to save the love of your life");
+    scanf("%c", string);
+    printf("\nNone have ever found the entrance to the Evil Lords Fortress, so you journey to\nthe edge of the Kingdom to the Oracle who can tell you how");
+    scanf("%c", string);
+    printf("\nYou approach her hut...");
+    scanf("%c", string);
+    printf("\n\"No Solicitors\" reads the sign outside. Well it it is a good thing you did not\ncome here on business");
+    scanf("%c", string);
+    printf("\nThe hut looks old and dilapidated with the only sign of life being the smoke\nrising from the chimney");
+    scanf("%c", string);
+    printf("\nKNOCK KNOCK on the door");
+    scanf("%c", string);
+    printf("\n\"HeeelllloooOOOOooOOOOOooo\" you hear from the other side of the rickety door");
+    scanf("%c", string);
+    printf("\n\"Im sorry Mr. Takei, I must have the wrong house\" you respond");
+    scanf("%c", string);
+    printf("\n\"No you fool! Im the Oracle\"");
+    scanf("%c", string);
+    printf("\n<You can talk during this quest! Choose what you want to say>");
+
+    do{
+    printf("\n  A) Lol Oracle pls");
+    printf("\n  B) K");
+    printf("\n  C) I am a humble traveler! I require your assistance o noble one");
+    printf("\n  D) I h8 u\n\n");
+    scanf("%c", &answer);
+
+    if(answer!='C'){
+        printf("<You cant say that to the oracle that makes no sense>");
+        scanf("%c", string);
+    }
+    printf("\n");
+
+    } while(answer!='C');
+
+    printf("\n\"Alright traveler come on in\"");
+    scanf("%c", string);
+    printf("\n\nYou enter the house. It is dark there");
+    scanf("%c", string);
+    printf("\nOnly a single candle in the corner and the fireplace give light to your\nsurroundings");
+    scanf("%c", string);
+    printf("\nThe floor creaks as you walk. Clearly no one has swept in ages");
+    scanf("%c", string);
+    printf("\nShe says \"Now traveler, what is it you seek. No one has been here for quite\nsome time\"\n");
+    scanf("%c", string);
+    printf("A)	I am on a quest to save my wife from the clutches of the Evil Lord\n");
+    printf("B)	You will help me old witch\n");
+    scanf("%c", &answer);
+
+    if(answer=='A')
+        {
+         printf("\nThe Oracle responds \"Ah yes the Dark Lord is a formidable foe and no outsider\nhas ever entered his Fortress but I can help you\n");}
+    else if(answer=='B'){
+         printf("\nThe Oracle responds \"Rude. But I will help you for it is what I do\"\n");}
+
+
+    printf("\nYou continue \"Thank you oh wise one. Please help me gain the knowledge to enter my enemys lair\"");
+    scanf("%c", string);
+
+	printf("\nThe Oracle sits down in her old wooden chair");
+    scanf("%c", string);
+	printf("She pauses \"Hmmmmm. The knowledge you seek is not beyond my power to grant, but\nI require something\"\n");
+	scanf("%c", string);
+	printf("She says \"I require the Key that the ancients hid away in this land long ago. \nIts magic will give the power required for such a vision. It is hidden in the\ntemple on the far side of the woods. Return to me when you have obtained it, but take this lens with you it will reveal the entrance to the temple\"");
+	scanf("%c", string);
+	printf("\nYou take the lens from the Oracle, and you know what you must do");
+	scanf("%c", string);
+    printf("\nYou bid the Oracle a farewell vowing to return with the ancient treasure that\nshe requires\n");
+
+    monsters Joey = {10,1,1,"Youngster Joey"};
+    EXP = EXP + battle(Joey.mskill,Joey.mHP,Joey.mATK,Joey.mname);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP);
+
+    printf("\n\nTired you approach the ancient door to the Old Gods of your ancestors. The \nforest has claimed the much of the above ground stone structure, but ancient \nmagics have kept the door to the underground hold intact through the ages. The \nstone door appears untouched by time. The ancient paintings on the stone door\nappear fresh. They show what appear to be priests pushing the stone slab away\nand entering the table. You know this is the entrance now\n");
+    scanf("%c", string);
+    printf("\nThe stone slab is immovable. No matter how hard you push you cannot unblock the door. What would you like to do?\n");
+
+
+    do{
+
+    printf("\nA) Push harder");
+    printf("\nB) Look around the area");
+    printf("\nC) Take a nap\n");
+    scanf("%c", &answer);
+    printf("\n\n");
+
+    if(answer=='A'){
+        printf("\nYou still cant move the slab. Do you even lift bro? What would you like to do?\n");
+    }
+    else if(answer=='B'){
+        printf("\nYou notice a large slab with ancient script on the other side of the temple courtyard and you go to investigate\n");
+    }
+    else if(answer=='C'){
+        printf("\nSolid nap. But you have a really tired, after-nap, groggy feeling. You want to take another nap now. Its a vicious cycle. What would you like to do?\n");
+    }
+    } while(answer!='B');
+    /* PROBLEM WITH THIS LOOP */
+
+    printf("\nYou approach the slab\n");
+    scanf("%c", string);
+    printf("The language of your ancestors covers the stone, preserved with their ancient magics");
+    scanf("%c", string);
+    printf("\nThe stone reads \"DUE IIJKSS KNSK XIICKS SLSAKJD BLAD KLJdsALK IOIJFKS\"");
+    scanf("%c", string);
+    printf("\nYou take out the lens the old mystic gave to you and place it over your eye");
+    scanf("%c", string);
+    printf("\nThe words transform into your own language and are now known to you");
+    scanf("%c", string);
+    printf("\nThe slab now reads \"There is an unlocked door around the corner from the slab. The slab is hard to push. We needed another way to get in\"");
+    scanf("%c", string);
+    printf("\nYou say to yourself \"Well thats convenient\" and return to the slab");
+    scanf("%c", string);
+    printf("\nStepping around the corner you see an average looking door and turn the handle. The door opens without incident and you walk into the temple...\n");
+    scanf("%c", string);
+
+    part1();
+
+/*EXP = EXP + battle(HP,Magic,ATK,mname,mskill,mHP,mATK);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP); */
+
+return(0);
+}
