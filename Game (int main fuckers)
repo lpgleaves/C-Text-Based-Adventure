@@ -123,7 +123,7 @@ void part1()
 {
 case 1:
 {
-printf("\nYou begin your journey in a small town in the northwest corner of the world. ");
+printf("\nYou begin your journey in a forgotten temple in the northwest corner of the world. ");
 printf("\nThere is literally nothing to the North or the West. I promise. ");
 printf("\nTo the South there is a river. ");
 printf("\nTo the East there is a valley. ");
@@ -137,7 +137,7 @@ printf("\nYou are attacked!");
 printf("\nYou stand in a valley in a pool of the goblin's blood.");
 printf("\nTo the South there is a hill. ");
 printf("\nTo the East there is a huge tree. ");
-printf("\nTo the West there is a small town.");
+printf("\nTo the West there is a forgotten temple.");
 break;
 }
 case 3:
@@ -163,6 +163,7 @@ break;
 case 5:
 {
 printf("\nYou stand next to a gently flowing river. ");
+printf("\nTo the north is a forgotten temple.");
 printf("\nTo the South there is a lake. ");
 printf("\nTo the East there is a hill. ");
 break;
@@ -486,8 +487,8 @@ int main()
 	printf("\nYou take the lens from the Oracle, and you know what you must do");
 	scanf("%c", string);
     printf("\nYou bid the Oracle a farewell vowing to return with the ancient treasure that\nshe requires\n");
-
-    monsters Joey = {10,1,1,"Youngster Joey"};
+    printf("\nYou leave the Oracle's hut, and along the road you encounter a young boy who wishes to battle you.");
+    monsters Joey = {10,1,10,"Youngster Joey"};
     EXP = EXP + battle(Joey.mskill,Joey.mHP,Joey.mATK,Joey.mname);
     if (EXP >= 10)
     {
@@ -505,8 +506,8 @@ int main()
     printf("\nThe stone slab is immovable. No matter how hard you push you cannot unblock the door. What would you like to do?\n");
 
 
-    do{
-
+    while(1==1)
+    {
     printf("\nA) Push harder");
     printf("\nB) Look around the area");
     printf("\nC) Take a nap\n");
@@ -518,12 +519,12 @@ int main()
     }
     else if(answer=='B'){
         printf("\nYou notice a large slab with ancient script on the other side of the temple courtyard and you go to investigate\n");
+        break;
     }
     else if(answer=='C'){
         printf("\nSolid nap. But you have a really tired, after-nap, groggy feeling. You want to take another nap now. Its a vicious cycle. What would you like to do?\n");
     }
-    } while(answer!='B');
-    /* PROBLEM WITH THIS LOOP */
+    }
 
     printf("\nYou approach the slab\n");
     scanf("%c", string);
