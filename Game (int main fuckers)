@@ -1,11 +1,25 @@
 #include<stdio.h>
 #include<string.h>
 
+//use for battle input
+/*EXP = EXP + battle(HP,Magic,ATK,mname,mskill,mHP,mATK);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP); */
+
 char string[200];
 int HP;
 int HPmax;
 int Magic;
 int ATK;
+int EXP;
 char Hero[50];
 void map();
 
@@ -42,12 +56,12 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
                         break;
                     }
             }
-        printf("The %s has %d HP.\n",monster,monsterHP);
+        printf("\nThe %s has %d HP.",monster,monsterHP);
         if (monsterHP > 0)
             {
-                printf("The %s attacks for %d damage!\n",monster,monsterATK);
+                printf("\nThe %s attacks for %d damage!",monster,monsterATK);
                 HP = HP - monsterATK;
-                printf("Your HP is now %d\n",HP);
+                printf("\nYour HP is now %d",HP);
             }
         if (HP < 0)
             {
@@ -56,11 +70,14 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
     } while (monsterHP > 0 && HP > 0);
     if (win == 1)
     {
-        printf("You have defeated the %s.\n",monster);
+        printf("\nYou have defeated the %s.",monster);
         EXPadd = mskill;
     }
     else if (win == 0)
-    EXPadd = 0;
+    {
+        EXPadd = 0;
+        printf("\nThe %s knocked you out. You wake up an hour later missing your wallet, shirt, and one shoe.");
+    }
     HP = HPmax;
 return(EXPadd);
 }
@@ -267,6 +284,8 @@ break;
                 break;
             case 'X' :
                 break;
+            default:
+                printf("\nThat's not a direction...");
         }
     } while (direction!='X');
     return;
@@ -525,17 +544,6 @@ int main()
 
     part1();
 
-/*EXP = EXP + battle(HP,Magic,ATK,mname,mskill,mHP,mATK);
-    if (EXP >= 10)
-    {
-        printf("Level Up!\n");
-        HP = HP + 10;
-        Magic = Magic + 2;
-        ATK = ATK + 2;
-        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
-    }
-    printf("Your EXP is %d\n",EXP); */
 
 return(0);
 }
