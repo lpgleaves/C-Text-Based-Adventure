@@ -3,6 +3,7 @@
 
 char string[200];
 int HP;
+int HPmax;
 int Magic;
 int ATK;
 char Hero[50];
@@ -60,6 +61,7 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
     }
     else if (win == 0)
     EXPadd = 0;
+    HP = HPmax;
 return(EXPadd);
 }
 
@@ -339,9 +341,6 @@ int main()
     printf("Which class would you like to be? : ");
 
     char hclass;
-    int HP;
-    int Magic;
-    int ATK;
     int EXP = 0;
     hclass = toupper(hclass);
 
@@ -349,21 +348,24 @@ int main()
         switch (hclass)
         {
         case 'C':
-        HP = 20;
+        HP = 30;
+        HPmax = 30;
         ATK = 5;
         Magic = 5;
         printf("\n<You're a chef. Fry this sucker>\n");
         break;
 
         case 'I':
-        HP = 10;
+        HP = 20;
+        HPmax = 20;
         ATK = 5;
         Magic = 10;
         printf("\n<You're an Illusionist. Beat this guy up>\n");
         break;
 
         case 'K':
-        HP = 10;
+        HP = 20;
+        HPmax = 30;
         ATK = 10;
         Magic = 5;
         printf("\n<You're a Kamikaze. Win>\n");
