@@ -22,6 +22,12 @@ int ATK;
 int EXP;
 char Hero[50];
 void map();
+typedef struct tiles tiles;
+struct tiles
+{
+int location;
+char *desc;
+};
 
 
 int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
@@ -84,7 +90,7 @@ return(EXPadd);
 
 
 
-void part1()
+int part1()
 {
     int i, j, x, current, r, c, completeQ = 0;
     int location[4][4];
@@ -288,10 +294,134 @@ break;
             default:
                 printf("\nThat's not a direction...");
         }
-    } while (direction!='X');
-    return;
+    } while (direction!='X' && current !=12);
+    return 0;
 }
-
+int part2()
+{
+int q;
+tiles partII[36];
+for (q=0;q<36;q++)
+{
+partII[0].location = q+1;
+}
+partII[0].desc = "some rocky cliffs";
+partII[1].desc = "a few impassable mountains";
+partII[2].desc = "a cliff of sharp rocks";
+partII[3].desc = "a small dark room";
+partII[4].desc = "a creepy antechamber";
+partII[5].desc = "a wide room";
+partII[6].desc = "a dungeon entrance";
+partII[7].desc = "a dark hallway filled with cobwebs";
+partII[8].desc = "a shady figure in a room";
+partII[9].desc = "a deep cave pool";
+partII[10].desc = "a dark pool, faintly glowing";
+partII[11].desc = "a prison cell";
+partII[12].desc = "a deep pit of scorching lava";
+partII[13].desc = "a dim hallway";
+partII[14].desc = "a well-lit chamber";
+partII[15].desc = "a room that looks nothing like an ambush";
+partII[16].desc = "a large room filled with cobwebs";
+partII[17].desc = "a tiny room";
+partII[18].desc = "an even deeper pool of blazing lava";
+partII[19].desc = ",for some reason, a cow and some grass";
+partII[20].desc = "what seems to be an arena";
+partII[21].desc = "lots of huge stalactites. Or stalagmites. Probably both, I don't really know. They're pointy";
+partII[22].desc = "a hallway with one torch on the wall";
+partII[23].desc = "a small room marked 'Totally treasure, and not a booby trap'";
+partII[24].desc = "a bubbling mass of hot lava";
+partII[25].desc = "some rocks surrounded by lava. It may be safe to walk across";
+partII[26].desc = "a large cave with a bit of lava in the corner";
+partII[27].desc = "a room covered in red stains";
+partII[28].desc = "a steep cliff face";
+partII[29].desc = "the pit of doom";
+partII[30].desc = "even more lava";
+partII[31].desc = "an huge slab of rock, and an equally large boss";
+partII[32].desc = "a lava waterfall";
+partII[33].desc = "a library";
+partII[34].desc = "a hole to the center of the planet";
+partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
+    int i, j, x, current, r, c, completeQ = 0;
+    int location[6][6];
+    char direction;
+    void map()
+    {
+    int i,j;
+    printf("\n");
+    for(i = 0; i < 6; ++i)
+    {
+        for(j = 0; j < 6; ++j)
+        {
+            printf("%d\t",location[i][j]);
+        }
+        printf("\n");
+    }
+    }
+    x = 1;
+    for(i = 0; i < 6; ++i)
+    {
+        for(j = 0; j < 6; ++j)
+        {
+            location[i][j] = x;
+            x++;
+        }
+    }
+    r = 1;
+    c = 0;
+    do {
+        current = location[r][c];
+        map();
+                printf("\nYou stand in %s.",partII[current-1].desc);
+            if (current > 6)
+                printf("\nTo the North is %s.",partII[current-7].desc);
+            if (current%6 !=0)
+                printf("\nTo the East is %s.",partII[current].desc);
+            if ((current-1)%6 !=0)
+                printf("\nTo the the West is %s.",partII[current-2].desc);
+            if (current < 30 )
+                printf("\nTo the the South is %s.",partII[current+5].desc);
+    printf("\nWhat direction would you like to go (N/S/E/W)? ");
+        scanf("%c", &direction);
+        direction=toupper(direction);
+        getchar();
+        switch (direction)
+        {
+            case 'N' :
+                if (current > 5 && current != 6 && current != 7 && current != 8)
+                    r = r - 1;
+                else {
+                    printf("\nSorry, you can't go north from here.");
+                }
+                break;
+            case 'S' :
+                if (current < 29 && current !=22 && current != 23 && current != 7)
+                    {
+                    r=r+1; }
+                else {
+                    printf("\nSorry, you can't go south from here."); }
+                break;
+            case 'E' :
+                if (((current+1)%6)!=0  && current != 33 && current != 33)
+                    {
+                    c=c+1; }
+                else {
+                    printf("\nSorry, you can't go east from here."); }
+                break;
+            case 'W' :
+                if ((current % 6)!=0  && current != 3 && current != 13 && current != 19 && current != 25)
+                    {
+                    c = c - 1;
+                    }
+                else {
+                    printf("\nSorry, you can't go west from here."); }
+                break;
+            case 'X' :
+                break;
+            default:
+                printf("\nThat's not a direction...");
+        }
+        }while (direction!='X');
+}
 
 typedef struct monsters monsters;
 struct monsters
@@ -542,9 +672,7 @@ int main()
     scanf("%c", string);
     printf("\nStepping around the corner you see an average looking door and turn the handle. The door opens without incident and you walk into the temple...\n");
     scanf("%c", string);
-
-    part1();
-
-
+    int x = part1();
+    x = part2();
 return(0);
 }
