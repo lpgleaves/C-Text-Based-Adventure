@@ -102,7 +102,10 @@ int part1()
     {
         for(j = 0; j < 4; ++j)
         {
+            if (location[i][j] != location[r][c])
             printf("%d\t",location[i][j]);
+            else
+            printf("*X*\t");
         }
         printf("\n");
     }
@@ -346,13 +349,15 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     char direction;
     void map()
     {
-    int i,j;
     printf("\n");
     for(i = 0; i < 6; ++i)
     {
         for(j = 0; j < 6; ++j)
         {
+            if (location[i][j] != location[r][c])
             printf("%d\t",location[i][j]);
+            else
+            printf("*X*\t");
         }
         printf("\n");
     }
@@ -401,14 +406,14 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
                     printf("\nSorry, you can't go south from here."); }
                 break;
             case 'E' :
-                if (((current+1)%6)!=0  && current != 33 && current != 33)
+                if (((current)%6)!=0  && current != 33 && current != 33)
                     {
                     c=c+1; }
                 else {
                     printf("\nSorry, you can't go east from here."); }
                 break;
             case 'W' :
-                if ((current % 6)!=0  && current != 3 && current != 13 && current != 19 && current != 25)
+                if (((current-1) % 6)!=0  && current != 3 && current != 13 && current != 19 && current != 25)
                     {
                     c = c - 1;
                     }
