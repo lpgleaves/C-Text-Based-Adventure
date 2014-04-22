@@ -1,0 +1,120 @@
+#include<stdio.h>
+#include<string.h>
+
+
+char string[200];
+char answer;
+
+int main(){
+
+printf("\n<To avoid repetitiveness and too much typing for me/reading for you, you\nfind yourself mysteriously back in the hut>");
+scanf("%c", string);
+printf("\n\"You got here quickly\" she says");
+scanf("%c", string);
+printf("\n\"I know time lapses and lazy programmers are beautiful things\" you respond with a grin");
+scanf("%c", string);
+printf("\n\"Never mind those things\" she says \"So you brought me the key did you?\"");
+scanf("%c", string);
+printf("\nA) Yes");
+printf("\nB) Yeah I did");
+printf("\nC) Its right here");
+printf("\nD) I cant say no (You actually cant)\n");
+scanf("%c", &answer);
+printf("\n\n\"Ah yesssss. Goood gooooood\" the Oracle continues, pleased as punch \"I can now\ntell you the location of your dear brother\"");
+scanf("%c", string);
+printf("\n\n\"Im looking for my wife\"");
+scanf("%c", string);
+printf("\n\"Oh yes sorry I must be thinking of someone else. Very well. Shes in the\nDark Lords castle. The password to which is 12345 Tread lightly for\nnone have ever made it past the gate before\"");
+scanf("%c", string);
+printf("\n\Really? I find that hard to believe with such a simple password\" (youre very\nskeptical of this woman now)");
+scanf("%c", string);
+printf("\n\"No its true no one has ever guessed that before. Everyone assumes the Dark Lord to be much more of a trickster. Its pure genius. Now tell me more of your past traveler. This seems like an appropriate time to establish your back story...");
+scanf("%c", string);
+printf("\n\"No. No its not\"");
+scanf("%c", string);
+printf("\n\"Well then...Now get going. You have a bit of a journey ahead of you\" she\nproceeds to quick you out hastily, and you realize she never had any vision due to the key. She just wanted it. She knew the password all along. So you make up your mind that she was mean and continue on your journey");
+scanf("%c", string);
+printf("\nThe world is dangerous, and you come closer to the danger with every step...\n(foreshadowing is fun)");
+scanf("%c", string);
+
+/* Part II starts now! Fun! */
+
+printf("\nYou journey towards the castle on horseback");
+scanf("%c", string);
+printf("\nYou seemed to have found a horse...Good for you");
+scanf("%c", string);
+printf("\nYou spend the night at an inn on the road. The next morning you talk to the\ninnkeeper");
+scanf("%c", string);
+printf("\nHe says \"I have a letter for you\"");
+printf("\nA) You do?");
+printf("\nB) <Run away before you have to pay him for your stay>");
+printf("\nC) Who is it from?\n");
+scanf("%c", &answer);
+
+if(answer=='A'){
+    printf("\nHe says \"Yes I do. Your friend the Oracle sent it\"");
+    scanf("%c", string);
+} else if(answer=='B'){
+    printf("\nOH NO YOU DONT! <Bouncers step up and grab you>");
+    scanf("%c", string);
+    printf("\nThey drag you back over to the innkeeper and throw you to the ground. Rude.");
+    scanf("%c", string);
+    printf("\nHe says \"Easy now traveler I will not harm you but I dont take kindly to thieves Now Im willing to overlook that because the Oracle is an old friend who\nforesaw my last IRS audit months before it happened. She is the one who sent you this here letter\"");
+    scanf("%c", string);
+} else if(answer=='C'){
+    printf("\nIt is from your friend the Oracle");
+    scanf("%c", string);
+}
+
+printf("\nYou quickly grab the letter and open it");
+scanf("%c", string);
+printf("\nIt reads the following: \"The path before you is a treacherous one. Srsly its a\nrough one. In order to enter the castle you must pass through the lair of the\ndragon. And to enter you will have to answer three puzzles correctly. Theyre all really easy they are just there to keep this game somewhat interesting\"");
+scanf("%c", string);
+printf("\nA new challenge awaits you. You thank the innkeeper, pay him, and leave");
+scanf("%c", string);
+printf("\nDays turn into weeks and you finally approach the volcano that blocks the path to the Dark Lord's Lair");
+scanf("%c", string);
+printf("\nA likely lair for a dragon...You see a door ahead");
+scanf("%c", string);
+printf("\nThere is an inscription of the door");
+scanf("%c", string);
+printf("\n\"Herein lies the great and terrible dragon! Only those who have proven\nthemselves worthy may pass through this door. If you can pass the three tests\nbelow, the dragon shall be waiting\"");
+scanf("%c", string);
+printf("\nThe door says \"To pass this first test, you must unscramble the jumbled letters: brnogDrano");
+
+/* I need to fix the word scramble but its late and tired and sry
+do {
+printf("Unscramble the world (Hint: Its Dragonborn:");
+scanf("%s", string);
+}(while string!=); */
+
+printf("\n\"To prove yourself worthy of entrance, you must pass this final test (we lied there are only two tests)\"");
+scanf("%c", string);
+int test2;
+do{
+printf("How many tests are there? :");
+scanf("%d", &test2);
+printf("\n\n");
+}while(test2!=2);
+
+printf("\nSUDDENLY the door vanishes!");
+scanf("%c", string);
+printf("\nYou enter the volcano...your next challenge awaits you...");
+
+/* put map 2 here */
+
+printf("\nThat was difficult");
+scanf("%c", string);
+printf("\nSeriously if your wife leaves you after all this that would really be unfortunate");
+scanf("%c", string);
+printf("\nTheres no time to waste with such silly thoughts! You must enter the castle now! Hi ho Silver! Away!");
+scanf("%c", string);
+
+/* put map 3 here */
+
+
+
+
+
+return(0);
+}
