@@ -398,32 +398,32 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
         if (current == 6 && partII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
+        //monsters DM = {30,40,20, "Dark Magician"};
         //battle();
         }
                 if (current == 9 && partII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
+        //monsters BEWD = {20,20,30, "Blue Eyes White Dragon"};
         //battle();
         }
                 if (current == 14 && partII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
+        //monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"};
         //battle();
         }
                 if (current == 16 && partII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
+        //monsters GSS = {400,10,20, "Giant Soldier of Stone"};
         //battle();
         }
                 if (current == 21 && partII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
+        //monsters DMG = {30,30,20, "Dark Magician Girl"};
         //battle();
         }
                 if (current == 23 && partII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
+        //monsters DMG = {30,30,20, "Dark Magician Girl"};
         //battle();
         }
         if (current == 32 && keys == 3)
