@@ -27,6 +27,7 @@ struct tiles
 {
 int location;
 char *desc;
+int clear;
 };
 
 
@@ -303,10 +304,12 @@ break;
 int part2()
 {
 int q;
+int keys = 0;
 tiles partII[36];
 for (q=0;q<36;q++)
 {
-partII[0].location = q+1;
+partII[q].location = q+1;
+partII[q].clear = 0;
 }
 partII[0].desc = "some rocky cliffs";
 partII[1].desc = "a few impassable mountains";
@@ -376,7 +379,57 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     do {
         current = location[r][c];
         map();
+        if (current == 5 && partII[current-1].clear != 1)
+        {
+        keys++;
+        printf("You have %d keys!",keys);
+        }
+        if (current == 34 && partII[current-1].clear != 1)
+        {
+        keys++;
+        printf("You have %d keys!",keys);
+        }
+        if (current == 18 && partII[current-1].clear != 1)
+        {
+        keys++;
+        printf("You have %d keys!",keys);
+        }
+        if (current == 6 && partII[current-1].clear != 1)
+        {
+        //monsters name {5,5,5,"Name"};
+        //battle();
+        }
+                if (current == 9 && partII[current-1].clear != 1)
+        {
+        //monsters name {5,5,5,"Name"};
+        //battle();
+        }
+                if (current == 14 && partII[current-1].clear != 1)
+        {
+        //monsters name {5,5,5,"Name"};
+        //battle();
+        }
+                if (current == 16 && partII[current-1].clear != 1)
+        {
+        //monsters name {5,5,5,"Name"};
+        //battle();
+        }
+                if (current == 21 && partII[current-1].clear != 1)
+        {
+        //monsters name {5,5,5,"Name"};
+        //battle();
+        }
+                if (current == 23 && partII[current-1].clear != 1)
+        {
+        //monsters name {5,5,5,"Name"};
+        //battle();
+        }
+        if (current == 32 && keys == 3)
+        {
+        //boss battle();
+        }
                 printf("\nYou stand in %s.",partII[current-1].desc);
+                partII[current-1].clear = 1;
             if (current > 6)
                 printf("\nTo the North is %s.",partII[current-7].desc);
             if (current%6 !=0)
@@ -427,6 +480,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
         }while (direction!='X');
 }
+
 
 typedef struct monsters monsters;
 struct monsters
