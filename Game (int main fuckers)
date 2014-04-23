@@ -575,9 +575,8 @@ int main()
 
     char hclass;
     int EXP = 0;
-    hclass = toupper(hclass);
-
     scanf("%c", &hclass);
+    hclass = toupper(hclass);
         switch (hclass)
         {
         case 'C':
@@ -756,7 +755,7 @@ int main()
     printf("\nStepping around the corner you see an average looking door and turn the handle. The door opens without incident and you walk into the temple...\n");
     scanf("%c", string);
     int x = part1();
-    
+
     printf("\n<To avoid repetitiveness and too much typing for me/reading for you, you\nfind yourself mysteriously back in the hut>");
 scanf("%c", string);
 printf("\n\"You got here quickly\" she says");
@@ -861,7 +860,7 @@ printf("\nTheres no time to waste with such silly thoughts! You must enter the c
 scanf("%c", string);
 
 /* PUT MAP THREE HERE PLS HEY SEE THIS COMMENT KLJDFLKSJFLKDSJFKDSLJFSLKDJLDSKJGLDSKJGLDSKJGDSLKJGLDSJGSDGLKK IM DRAWING ATTENTION TO THIS COMMENT */
-    
+
 printf("\nCongratulations on beating the final boss! Good work!");
 scanf("%c", string);
 printf("\nYour wife is saved! Hooray!");
@@ -882,8 +881,8 @@ printf("Tough break. Looks like this was all for nothing. But hey! You had fun! 
 scanf("%c", string);
 
 printf("\n\n\nTHANKS FOR PLAYING!!!!");
-    
-    
-    
+
+
+
 return(0);
 }
