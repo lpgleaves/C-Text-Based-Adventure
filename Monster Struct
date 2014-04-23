@@ -34,7 +34,7 @@ monsters SD = {30,30,30, "Stardust Dragon"};
 monsters CD = {20,20,20, "Cyber Dragon"};
 
 monsters jynx = {8,6,7,"Jynx"};
-monsters pikachu = (5,2,3,"Pikachu"};
+monsters pikachu = {5,2,3,"Pikachu"};
 monsters zubat = {2,1,1,"Zubat"};
 monsters mewtwo = {19,15,18,"Mewtwo"};
 monsters squirtle = {6,4.5,"Squirtle"};
