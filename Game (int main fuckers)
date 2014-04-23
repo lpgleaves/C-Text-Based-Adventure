@@ -175,7 +175,7 @@ case 2:
 {
 printf("\nYou stand next to a massive tree.");
 printf("\nThe tree grants you life!");
-//HP +5
+HP = HP + 5;
 printf("\nTo the South there are some flowers. ");
 printf("\nTo the East there is a dark forest. ");
 printf("\nTo the West there is a valley. ");
@@ -245,7 +245,12 @@ break;
 case 7:
 {
 printf("\nYou enter the tower.");
-//puzzle
+if (key1 != 1)
+{
+    key1 = 1;
+    printf("\nYou found the key!");
+}
+printf("\nYou have the key to the secret cave entrance!");
 printf("\nYou exit the tower.");
 printf("\nTo the North there is a forest. ");
 printf("\nTo the South there is a cave. ");
@@ -262,9 +267,7 @@ break;
 }
 case 9:
 {
-printf("\nYou enter the hut.");
-//puzzle answer
-printf("\nYou exit the hut.");
+printf("\nYou try to enter the hut, but it is locked.");
 printf("\nTo the North there is a hill. ");
 printf("\nTo the South there is an impassable mountain range. ");
 printf("\nTo the East there are some rocks. ");
