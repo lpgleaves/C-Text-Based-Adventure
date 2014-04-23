@@ -302,7 +302,6 @@ case 11:
 printf("\nYou enter the cave.");
 if(key1 == 1)
     return(0);
-//Cave stuff, need key to get in
 printf("\nYou exit the cave.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
@@ -338,10 +337,11 @@ break;
                 if (current<13) {
                     r=r+1; }
                 else {
-                    printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) "); }
+                    printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) ");
+                    }
                 break;
             case 'E' :
-                if ((current%4)!=0) {
+                if ((current%4)!=0 && current != 11) {
                     c=c+1; }
                 else {
                     printf("\nSorry, you can't go east from here. Try another direction. (N/S/W) "); }
