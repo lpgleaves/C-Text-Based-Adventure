@@ -510,12 +510,13 @@ int main()
 
     printf("Are you ready to begin? (Y for yes, N for being a coward)\n");
     scanf("%c", &answer);
-
+    toupper(answer);
     if(answer=='N')
     {
         printf("You don't get to say no\n");
     }
-
+    if (answer != 'N' && answer != 'Y');
+        printf("It's too early for you to not be following instructions...\n");
     printf("\n\n");
     printf("We begin in the forest......(Press Enter to continue)");
     scanf("%c", string);
