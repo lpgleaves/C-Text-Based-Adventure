@@ -62,6 +62,8 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
                         monsterHP =  monsterHP - magicattack;
                         break;
                     }
+                default:
+                    printf("\nThat's just not an option...");
             }
         printf("\nThe %s has %d HP.",monster,monsterHP);
         if (monsterHP > 0)
@@ -144,7 +146,17 @@ case 1:
 printf("\nYou stand in a valley. ");
 printf("\nYou are attacked!");
 monsters jynx = {8,6,7,"Jynx"};
-battle(jynx.mskill,jynx.mHP,jynx.mATK,jynx.mname);
+EXP = EXP + battle(jynx.mskill,jynx.mHP,jynx.mATK,jynx.mname);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP); 
 printf("\nYou stand in a valley in a pool of the goblin's blood.");
 printf("\nTo the South there is a hill. ");
 printf("\nTo the East there is a huge tree. ");
@@ -166,7 +178,17 @@ case 3:
 printf("\nYou stand in the forest. ");
 printf("\nYou are attacked!");
 monsters pikachu = {5,3,2,"Pikachu"};
-battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
+EXP = EXP + battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP); 
 printf("\nYou stand in the forest.");
 printf("\nTo the South there is a tower. ");
 printf("\nTo the West there is a huge tree. ");
@@ -185,7 +207,17 @@ case 5:
 printf("\nYou stand on a hill. ");
 printf("\nYou are attacked!");
 monsters zubat = {1,2,1,"Zubat"};
-battle(zubat.mskill,zubat.mHP,zubat.mATK,zubat.mname);
+EXP = EXP + battle(zubat.mskill,zubat.mHP,zubat.mATK,zubat.mname);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP); 
 printf("\nYou stand on a hill.");
 printf("\nTo the North there is a valley. ");
 printf("\nTo the South there is a hut. ");
@@ -236,7 +268,17 @@ case 10:
 printf("\nYou stand on some rocks. ");
 printf("\nYou are attacked!");
 monsters brock = {21,24,30,"Brock"};
-battle(brock.mskill,brock.mHP,brock.mATK,brock.mname);
+EXP = EXP + battle(brock.mskill,brock.mHP,brock.mATK,brock.mname);
+    if (EXP >= 10)
+    {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+    }
+    printf("Your EXP is %d\n",EXP); 
 printf("\nYou stand on some rocks.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
@@ -514,13 +556,13 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
 }
 int part3()
 {
-int q;
+int z;
 int keys = 0;
 tiles partIII[36];
-for (q=0;q<36;q++)
+for (z=0;z<36;z++)
 {
-partIII[q].location = q;
-partIII[q].clear = 0;
+partIII[z].location = z;
+partIII[z].clear = 0;
 }
 partIII[0].desc = "some rocky cliffs";
 partIII[1].desc = "a few impassable mountains";
@@ -553,12 +595,12 @@ partIII[27].desc = "a room covered in red stains";
 partIII[28].desc = "a steep cliff face";
 partIII[29].desc = "the pit of doom";
 partIII[30].desc = "even more lava";
-partIII[31].desc = "an huge slab of rock, and an equally large boss";
+partIII[31].desc = "an huge slab of rock, and an ezually large boss";
 partIII[32].desc = "a lava waterfall";
 partIII[33].desc = "a library";
 partIII[34].desc = "a hole to the center of the planet";
 partIII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
-    int i, j, x, current, r, c, completeQ = 0;
+    int i, j, x, current, r, c, completez = 0;
     int location[6][6];
     char direction;
     void map()
