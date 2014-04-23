@@ -361,6 +361,7 @@ break;
     } while (direction!='X' && current !=12);
     return 0;
 }
+
 int part2()
 {
 int q;
@@ -471,33 +472,79 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
                 if (current == 9 && partII[current-1].clear != 1)
         {
-        //monsters BEWD = {20,20,30, "Blue Eyes White Dragon"};
-        //battle();
+        monsters BEWD = {20,20,30, "Blue Eyes White Dragon"};
+        EXP = EXP + battle(BEWD.mskill,BEWD.mHP,BEWD.mATK,BEWD.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
         }
                 if (current == 14 && partII[current-1].clear != 1)
         {
-        //monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"};
-        //battle();
+        monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"};
+        EXP = EXP + battle(REBD.mskill,REBD.mHP,REBD.mATK,REBD.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
         }
                 if (current == 16 && partII[current-1].clear != 1)
         {
-        //monsters GSS = {400,10,20, "Giant Soldier of Stone"};
-        //battle();
+        monsters GSS = {400,10,20, "Giant Soldier of Stone"};
+        EXP = EXP + battle(GSS.mskill,GSS.mHP,GSS.mATK,GSS.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
         }
                 if (current == 21 && partII[current-1].clear != 1)
         {
-        //monsters DMG = {30,30,20, "Dark Magician Girl"};
-        //battle();
+        monsters DMG = {30,30,20, "Dark Magician Girl"};
+        EXP = EXP + battle(DMG.mskill,DMG.mHP,DMG.mATK,DMG.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
         }
                 if (current == 23 && partII[current-1].clear != 1)
         {
-        //monsters DMG = {30,30,20, "Dark Magician Girl"};
-
+        monsters DMG2 = {30,30,20, "Dark Magician Girl's Twin"};
+        EXP = EXP + battle(DMG2.mskill,DMG2.mHP,DMG2.mATK,DMG2.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
         }
         if (current == 32 && keys == 3)
         {
         int win2;
-        //boss battle();
+        //monsters boss2 = {};
+        //battle(boss2.mskill,boss2.mHP,boss2.mATK,boss2.mname);
         if (win2 != 0)
             return 0;
         }
@@ -574,8 +621,9 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
             default:
                 printf("\nThat's not a direction...");
         }
-        }while (direction!='X');
-}
+}while (direction!='X');
+        return 0;
+        }
 int part3()
 {
 int z;
