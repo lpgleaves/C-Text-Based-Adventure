@@ -1068,23 +1068,14 @@ scanf("%c", string);
 printf("\nThere is an inscription of the door");
 scanf("%c", string);
 printf("\n\"Herein lies the great and terrible dragon! Only those who have proven\nthemselves worthy may pass through this door. If you can pass the three tests\nbelow, the dragon shall be waiting\"");
-scanf("%c", string);
-printf("\nThe door says \"To pass this first test, you must unscramble the jumbled letters: brnogDrano");
-
-/* I need to fix the word scramble but its late and tired and sry
-do {
-printf("Unscramble the world (Hint: Its Dragonborn:");
-scanf("%s", string);
-}(while string!=); */
-
-printf("\n\"To prove yourself worthy of entrance, you must pass this final test (we lied there are only two tests)\"");
+printf("\n\"To prove yourself worthy of entrance, you must pass this final test (we lied there is only one test)\"");
 scanf("%c", string);
 int test2;
 do{
 printf("How many tests are there? :");
 scanf("%d", &test2);
 printf("\n\n");
-}while(test2!=2);
+}while(test2!=1);
 
 printf("\nSUDDENLY the door vanishes!");
 scanf("%c", string);
@@ -1110,8 +1101,9 @@ else {
 printf("\n\nONWAAARD, SILVEEEER!");
 }
 } while (castlepass != 12345);
+printf("\nYou enter the great doors, only to discover \nthat this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
 
-/* PUT MAP THREE HERE PLS HEY SEE THIS COMMENT KLJDFLKSJFLKDSJFKDSLJFSLKDJLDSKJGLDSKJGLDSKJGDSLKJGLDSJGSDGLKK IM DRAWING ATTENTION TO THIS COMMENT */
+x = part3();
 
 printf("\nCongratulations on beating the final boss! Good work!");
 scanf("%c", string);
@@ -1133,8 +1125,6 @@ printf("Tough break. Looks like this was all for nothing. But hey! You had fun! 
 scanf("%c", string);
 
 printf("\n\n\nTHANKS FOR PLAYING!!!!");
-
-
 
 return(0);
 }
