@@ -13,6 +13,14 @@
         EXP = EXP%10;
     }
     printf("Your EXP is %d\n",EXP); */
+typedef struct monsters monsters;
+struct monsters
+{
+    int mHP;
+    int mATK;
+    int mskill;
+    char mname[25];
+};
 
 char string[200];
 int HP;
@@ -95,7 +103,7 @@ return(EXPadd);
 
 int part1()
 {
-    int i, j, x, current, r, c, completeQ = 0;
+    int i, j, x, current, r, c, completeQ = 0,key1 = 0;
     int location[4][4];
     char direction;
     void map()
@@ -156,7 +164,7 @@ EXP = EXP + battle(jynx.mskill,jynx.mHP,jynx.mATK,jynx.mname);
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
         EXP = EXP%10;
     }
-    printf("Your EXP is %d\n",EXP); 
+    printf("Your EXP is %d\n",EXP);
 printf("\nYou stand in a valley in a pool of the goblin's blood.");
 printf("\nTo the South there is a hill. ");
 printf("\nTo the East there is a huge tree. ");
@@ -188,7 +196,7 @@ EXP = EXP + battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
         EXP = EXP%10;
     }
-    printf("Your EXP is %d\n",EXP); 
+    printf("Your EXP is %d\n",EXP);
 printf("\nYou stand in the forest.");
 printf("\nTo the South there is a tower. ");
 printf("\nTo the West there is a huge tree. ");
@@ -217,7 +225,7 @@ EXP = EXP + battle(zubat.mskill,zubat.mHP,zubat.mATK,zubat.mname);
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
         EXP = EXP%10;
     }
-    printf("Your EXP is %d\n",EXP); 
+    printf("Your EXP is %d\n",EXP);
 printf("\nYou stand on a hill.");
 printf("\nTo the North there is a valley. ");
 printf("\nTo the South there is a hut. ");
@@ -278,7 +286,7 @@ EXP = EXP + battle(brock.mskill,brock.mHP,brock.mATK,brock.mname);
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
         EXP = EXP%10;
     }
-    printf("Your EXP is %d\n",EXP); 
+    printf("Your EXP is %d\n",EXP);
 printf("\nYou stand on some rocks.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
@@ -444,8 +452,18 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
         if (current == 6 && partII[current-1].clear != 1)
         {
-        //monsters DM = {30,40,20, "Dark Magician"};
-        //battle();
+        monsters DM = {30,40,20, "Dark Magician"};
+        EXP = EXP + battle(DM.mskill,DM.mHP,DM.mATK,DM.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP%10;
+        }
+    printf("Your EXP is %d\n",EXP);
         }
                 if (current == 9 && partII[current-1].clear != 1)
         {
@@ -470,7 +488,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
                 if (current == 23 && partII[current-1].clear != 1)
         {
         //monsters DMG = {30,30,20, "Dark Magician Girl"};
-        //battle();
+
         }
         if (current == 32 && keys == 3)
         {
@@ -737,19 +755,6 @@ partIII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
         }while (direction!='X');
 }
-
-typedef struct monsters monsters;
-struct monsters
-{
-    int mHP;
-    int mATK;
-    int mskill;
-    char mname[25];
-};
-
-
-
-
 
 int main()
 {
