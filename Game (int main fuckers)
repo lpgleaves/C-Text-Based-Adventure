@@ -251,6 +251,7 @@ if (key1 != 1)
     printf("\nYou found the key!");
 }
 printf("\nYou have the key to the secret cave entrance!");
+printf("\nBring it to the cave in the SouthEast!");
 printf("\nYou exit the tower.");
 printf("\nTo the North there is a forest. ");
 printf("\nTo the South there is a cave. ");
@@ -302,7 +303,7 @@ case 11:
 printf("\nYou enter the cave.");
 if(key1 == 1)
     return(0);
-printf("\nYou exit the cave.");
+printf("\nYou exit the cave, as you don't have the key yet.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
 printf("\nTo the East there is a cave. ");
@@ -996,7 +997,7 @@ int main()
     scanf("%c", string);
     int x = part1();
 
-    printf("\n<To avoid repetitiveness and too much typing for me/reading for you, you\nfind yourself mysteriously back in the hut>");
+printf("\n<To avoid repetitiveness and too much typing for me/reading for you, you\nfind yourself mysteriously back in the hut>");
 scanf("%c", string);
 printf("\n\"You got here quickly\" she says");
 scanf("%c", string);
