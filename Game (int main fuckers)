@@ -347,6 +347,14 @@ partII[32].desc = "a lava waterfall";
 partII[33].desc = "a library";
 partII[34].desc = "a hole to the center of the planet";
 partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
+
+monsters DM = {30,40,20, "Dark Magician"};//monster 1
+monsters BEWD = {20,20,30, "Blue Eyes White Dragon"};//monster 2
+monsters REBD = {30,20,20, "Red Eyes Bkack Dragon"};//monster 3
+monsters GSS = {400,10,20, "Giant Soldier of Stone"};//monster 4
+monsters EFO = {50,50,50, "Exodia the Forbidden One"};//boss
+monsters DMG = {30,30,20, "Dark Magician Girl"};//monster 5
+monsters SG = {10,10,20, "Scapegoat"};//monster 6
     int i, j, x, current, r, c, completeQ = 0;
     int location[6][6];
     char direction;
