@@ -10,7 +10,7 @@
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
     }
     printf("Your EXP is %d\n",EXP); */
 typedef struct monsters monsters;
@@ -162,7 +162,7 @@ EXP = EXP + battle(jynx.mskill,jynx.mHP,jynx.mATK,jynx.mname);
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
     }
     printf("Your EXP is %d\n",EXP);
 printf("\nYou stand in a valley in a pool of the goblin's blood.");
@@ -194,7 +194,7 @@ EXP = EXP + battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
     }
     printf("Your EXP is %d\n",EXP);
 printf("\nYou stand in the forest.");
@@ -223,7 +223,7 @@ EXP = EXP + battle(zubat.mskill,zubat.mHP,zubat.mATK,zubat.mname);
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
     }
     printf("Your EXP is %d\n",EXP);
 printf("\nYou stand on a hill.");
@@ -284,7 +284,7 @@ EXP = EXP + battle(brock.mskill,brock.mHP,brock.mATK,brock.mname);
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
     }
     printf("Your EXP is %d\n",EXP);
 printf("\nYou stand on some rocks.");
@@ -461,7 +461,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
         }
     printf("Your EXP is %d\n",EXP);
         }
@@ -946,7 +946,7 @@ int main()
         Magic = Magic + 2;
         ATK = ATK + 2;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
-        EXP = EXP%10;
+        EXP = EXP-10;
     }
     printf("Your EXP is %d\n",EXP);
 
