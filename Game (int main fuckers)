@@ -1092,12 +1092,24 @@ printf("\nYou enter the volcano...your next challenge awaits you...");
 
 x = part2();
 
+int castlepass;
 printf("\nThat was difficult");
 scanf("%c", string);
 printf("\nSeriously if your wife leaves you after all this that would really be unfortunate");
 scanf("%c", string);
 printf("\nTheres no time to waste with such silly thoughts! You must enter the castle now! Hi ho Silver! Away!");
 scanf("%c", string);
+printf("\nWait a second... there's an electronic lock on the outside of the door...");
+do {
+printf("\nWhat was the password that old woman?\n");
+scanf("%d", &castlepass);
+if (castlepass != 12345) {
+printf("\nNo, I don't think that was it. Hmm...");
+}
+else {
+printf("\n\nONWAAARD, SILVEEEER!");
+}
+} while (castlepass != 12345);
 
 /* PUT MAP THREE HERE PLS HEY SEE THIS COMMENT KLJDFLKSJFLKDSJFKDSLJFSLKDJLDSKJGLDSKJGLDSKJGDSLKJGLDSJGSDGLKK IM DRAWING ATTENTION TO THIS COMMENT */
 
