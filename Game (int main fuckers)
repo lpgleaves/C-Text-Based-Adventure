@@ -143,7 +143,8 @@ case 1:
 {
 printf("\nYou stand in a valley. ");
 printf("\nYou are attacked!");
-//battle
+monsters jynx = {8,6,7,"Jynx"};
+battle(jynx.mskill,jynx.mHP,jynx.mATK,jynx.mname);
 printf("\nYou stand in a valley in a pool of the goblin's blood.");
 printf("\nTo the South there is a hill. ");
 printf("\nTo the East there is a huge tree. ");
@@ -164,7 +165,8 @@ case 3:
 {
 printf("\nYou stand in the forest. ");
 printf("\nYou are attacked!");
-//battle
+monsters pikachu = {5,3,2,"Pikachu"};
+battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
 printf("\nYou stand in the forest.");
 printf("\nTo the South there is a tower. ");
 printf("\nTo the West there is a huge tree. ");
@@ -182,7 +184,8 @@ case 5:
 {
 printf("\nYou stand on a hill. ");
 printf("\nYou are attacked!");
-//battle
+monsters zubat = {1,2,1,"Zubat"};
+battle(zubat.mskill,zubat.mHP,zubat.mATK,zubat.mname);
 printf("\nYou stand on a hill.");
 printf("\nTo the North there is a valley. ");
 printf("\nTo the South there is a hut. ");
@@ -232,7 +235,8 @@ case 10:
 {
 printf("\nYou stand on some rocks. ");
 printf("\nYou are attacked!");
-//battle w/ Geodude
+monsters brock = {21,24,30,"Brock"};
+battle(brock.mskill,brock.mHP,brock.mATK,brock.mname);
 printf("\nYou stand on some rocks.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
