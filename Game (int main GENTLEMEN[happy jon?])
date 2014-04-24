@@ -179,7 +179,7 @@ printf("\nYou stand in the forest. ");
 printf("\nYou are attacked!");
 monsters pikachu = {15,5,10,"Pikachu"};
 EXP = EXP + battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
-    if (EXP = 10)
+    if (EXP == 10)
     {
         printf("Level Up!\n");
         HPmax = HPmax + 10;
@@ -932,9 +932,11 @@ int main()
     {
         printf("You don't get to say no\n");
     }
-    if (answer != 'N' && answer != 'Y');
+    if (answer != 'N' && answer != 'Y')
+    {
         printf("It's too early for you to not be following instructions...\n");
-
+    }
+	
     printf("\n\n====================================================================\n\n");
     printf("\n");
     printf("We begin in the forest......(Press Enter to continue)");
