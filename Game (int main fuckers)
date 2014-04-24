@@ -17,7 +17,6 @@ int Magic;
 int ATK;
 int EXP;
 char Hero[50];
-void map();
 typedef struct tiles tiles;
 struct tiles
 {
@@ -978,7 +977,7 @@ int main()
     char hclass;
     int EXP = 0;
     scanf("%c", &hclass);
-    hclass = toupper(hclass);
+    toupper(hclass);
         switch (hclass)
         {
         case 'C':
@@ -988,20 +987,19 @@ int main()
         Magic = 5;
         printf("\n<You're a chef. Fry this sucker>\n");
         break;
-
         case 'I':
         HP = 20;
         HPmax = 20;
         ATK = 5;
         Magic = 10;
-        printf("\n<You're an Illusionist. Beat this guy up>\n");
+        printf("\n<You're an Illusionist. Befuddle the mind, and all that.>\n");
         break;
         case 'K':
         HP = 20;
         HPmax = 30;
         ATK = 10;
         Magic = 5;
-        printf("\n<You're a Kamikaze. Win>\n");
+        printf("\n<You're a Kamikaze. Go berserk>\n");
         break;
         }
 
