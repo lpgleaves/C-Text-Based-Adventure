@@ -421,7 +421,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         printf("\n");
     }
     }
-    x = 1;
+    x = 0;
     for(i = 0; i < 6; ++i)
     {
         for(j = 0; j < 6; ++j)
@@ -681,7 +681,7 @@ partIII[35].desc = "lava";
         printf("\n");
     }
     }
-    x = 1;
+    x = 0;
     for(i = 0; i < 6; ++i)
     {
         for(j = 0; j < 6; ++j)
@@ -1020,7 +1020,7 @@ int main()
     scanf("%c", string);
     printf("\nHowever, that delicate peace hangs in the balance as skirmishes have broken out along the border");
     scanf("%c", string);
-    printf("\nThe Evil Overlord had the audacity to show his face in your Kingdom/’s Capitol to \nissue his ultimatum of war");
+    printf("\nThe Evil Overlord had the audacity to show his face in your Kingdom's Capitol to \nissue his ultimatum of war");
     scanf("%c", string);
     printf("\nThen he kidnapped your wife from you in the street...");
     scanf("%c", string);
