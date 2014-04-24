@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <time.h>
 
 typedef struct monsters monsters;
 struct monsters
@@ -17,6 +18,8 @@ int Magic;
 int ATK;
 int EXP;
 char Hero[50];
+
+
 typedef struct tiles tiles;
 struct tiles
 {
@@ -399,6 +402,7 @@ partII[32].desc = "a lava waterfall";
 partII[33].desc = "a library";
 partII[34].desc = "a hole to the center of the planet";
 partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
+
     int i, j, x, current, r, c, completeQ = 0;
     int location[6][6];
     char direction;
@@ -608,8 +612,11 @@ HPmax = HPmax + 10;
                 printf("\nThat's not a direction...");
         }
 }while (direction!='X');
-        return 0;
-        }
+
+return 0;
+}
+
+
 int part3()
 {
 int z;
@@ -961,7 +968,7 @@ int main()
 
     char hclass;
     int EXP = 0;
-    scanf("%c", &hclass);
+    scanf(" %c", &hclass);
     toupper(hclass);
         switch (hclass)
         {
@@ -986,8 +993,15 @@ int main()
         Magic = 5;
         printf("\n<You're a Kamikaze. Go berserk>\n");
         break;
+        default:
+        printf("\nNot a valid option, so you get Chef.");
+        HP = 30;
+        HPmax = 30;
+        ATK = 5;
+        Magic = 5;
+        printf("\n<You're a chef. Because you do not follow instructions.>\n");
+        break;
         }
-
     monsters scout = {10,5,10,"Scout"};
     battle(scout.mskill,scout.mHP,scout.mATK,scout.mname);
     printf("You won! Huzzah!\n");
@@ -1038,7 +1052,7 @@ int main()
     do{
     printf("\n  A) Lol Oracle pls");
     printf("\n  B) K");
-    printf("\n  C) I am a humble traveler! I require your assistance o noble one");
+    printf("\n  C) I am %s! I require your assistance o noble one",Hero);
     printf("\n  D) I h8 u\n\n");
     scanf("%c", &answer);
 
@@ -1058,18 +1072,20 @@ int main()
     scanf("%c", string);
     printf("\nThe floor creaks as you walk. Clearly no one has swept in ages");
     scanf("%c", string);
-    printf("\nShe says \"Now traveler, what is it you seek. No one has been here for quite\nsome time\"\n");
+    printf("\nShe says \"Now %s, what is it you seek. No one has been here for quite\nsome time\"\n",Hero);
     scanf("%c", string);
     printf("A)	I am on a quest to save my wife from the clutches of the Evil Lord\n");
     printf("B)	You will help me old witch\n");
-    scanf("%c", &answer);
+    scanf(" %c", &answer);
+    toupper(answer);
 
     if(answer=='A')
         {
          printf("\nThe Oracle responds \"Ah yes the Evil Overlord is a formidable foe and no outsider\nhas ever entered his Fortress but I can help you\n");}
     else if(answer=='B'){
          printf("\nThe Oracle responds \"Rude. But I will help you for it is what I do\"\n");}
-
+    else
+        printf("\nYou stare blankly at the Oracle. She appreciates you shutting up.");
 
     printf("\nYou continue \"Thank you oh wise one. Please help me gain the knowledge to enter my enemys lair\"");
     scanf("%c", string);
@@ -1153,7 +1169,7 @@ printf("\nA) Yes");
 printf("\nB) Yeah I did");
 printf("\nC) Its right here");
 printf("\nD) I cant say no (You actually cant)\n");
-scanf("%c", &answer);
+scanf(" %c", &answer);
 printf("\n\n\"Ah yesssss. Goood gooooood\" the Oracle continues, pleased as punch \"I can now\ntell you the location of your dear brother\"");
 scanf("%c", string);
 printf("\n\n\"Im looking for my wife\"");
@@ -1183,7 +1199,7 @@ printf("\nHe says \"I have a letter for you\"");
 printf("\nA) You do?");
 printf("\nB) <Run away before you have to pay him for your stay>");
 printf("\nC) Who is it from?\n");
-scanf("%c", &answer);
+scanf(" %c", &answer);
 
 if(answer=='A'){
     printf("\nHe says \"Yes I do. Your friend the Oracle sent it\"");
@@ -1197,6 +1213,11 @@ if(answer=='A'){
     scanf("%c", string);
 } else if(answer=='C'){
     printf("\nIt is from your friend the Oracle");
+    scanf("%c", string);
+}
+else
+{
+    printf("\nBefore you can make up your mind, he tells you \nthat it was sent by the Oracle, and hands you the letter.");
     scanf("%c", string);
 }
 
@@ -1218,7 +1239,7 @@ scanf("%c", string);
 int test2;
 do{
 printf("How many tests are there? :");
-scanf("%d", &test2);
+scanf(" %d", &test2);
 printf("\n\n");
 }while(test2!=1);
 
@@ -1239,7 +1260,7 @@ scanf("%c", string);
 printf("\nWait a second... there's an electronic lock on the outside of the door...");
 do {
 printf("\nWhat was the password that old woman?\n");
-scanf("%d", &castlepass);
+scanf(" %d", &castlepass);
 if (castlepass != 12345) {
 printf("\nNo, I don't think that was it. Hmm...");
 }
