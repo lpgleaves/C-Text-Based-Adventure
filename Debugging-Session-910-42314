@@ -1,24 +1,24 @@
-"audacity to show his face in your" fix apostrophe
+"audacity to show his face in your" fix apostrophe x
 
-when visiting oracle, make sure \ns are consistent
+when visiting oracle, make sure \ns are consistent x
 
-fix stone slab loop -- looks like getchar() issue?
+fix stone slab loop -- looks like getchar() issue? x
 
-Line breaks acting up after choosing first direction
+Line breaks acting up after choosing first direction x
 
-toupper() direction input
+toupper() direction input x
 
-more \ns after direction prompts
+more \ns after direction prompts x
 
-exits part 1 early?!
+exits part 1 early?! x
 
-grammar check "password is 12345"-- needs period, semicolon
+grammar check "password is 12345"-- needs period, semicolon x 
 
 spacing between map display and battle functions
 
 stopped working entirely when HP <= 0
 
-HP sometimes incorrectly displayed
+HP sometimes incorrectly displayed x
 
 printf lines of "======================"? for the sake of neatness
 
@@ -26,9 +26,9 @@ Can't go east from 0 in part 1 (probably a divisibility issue)
 
 exits when you get to spot 12
 
-Red Eyes Bkack Dragon ---> spelling pls
+Red Eyes Bkack Dragon ---> spelling pls x 
 
-battle "still doesn't entirely work"
+battle "still doesn't entirely work" x?
 
 won't let you go south from 14 in part 2
 
