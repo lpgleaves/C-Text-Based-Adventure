@@ -527,22 +527,6 @@ HPmax = HPmax + 10;
         map();
         }
         }
-                if (current == 23 && partII[current-1].clear != 1)
-        {
-        monsters DMG2 = {32,13,10, "Dark Magician Girl's Twin"};
-        EXP = EXP + battle(DMG2.mskill,DMG2.mHP,DMG2.mATK,DMG2.mname);
-        if (EXP >= 10)
-        {
-        printf("Level Up!\n");
-HPmax = HPmax + 10;
-	HP = HPmax;
-        Magic = Magic + 5;
-        ATK = ATK + 5;
-        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
-        EXP = EXP-10;
-        map();
-        }
-        }
         if (current == 32 && keys == 3)
         {
         int win2;
@@ -561,14 +545,14 @@ HPmax = HPmax + 10;
         Magic = Magic + 5;
         printf("\nYou found a stick!\nI think it does magic!\nYour magic is now %d!",Magic);
         }
-        if (current == 24 && partII[current-1].clear != 1)
+        if (current == 26 && partII[current-1].clear != 1)
         {
         HP= HP + 5;
         printf("\nYou found a cow.\nYou eat the cow.\nYour health is now %d!\nThe cow's health is 0.\nBecause you ate it.\n.\n.\nYou monster.",HP);
         }
-        if (current == 24 && partII[current-1].clear != 1)
+        if (current == 23 && partII[current-1].clear != 1)
         {
-        printf("\nYou notice this chest seems too small, and avoid the booby trap.\nClose one.");
+        printf("\nYou read the sign, use logic, and avoid the booby trap.\nClose one.");
         }
         if (current == 15 && partII[current-1].clear != 1)
         {
@@ -718,7 +702,7 @@ partIII[35].desc = "lava";
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+        map();
         }
         if (current == 14 && partIII[current-1].clear != 1)
         {
@@ -735,6 +719,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
+        map();
               }
         if (current == 15 && partIII[current-1].clear != 1)
         {
@@ -750,7 +735,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+        map();
         }
         if (current == 16 && partIII[current-1].clear != 1)
         {
@@ -766,7 +751,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+        map();
         }
         if (current == 19 && partIII[current-1].clear != 1)
         {
@@ -782,7 +767,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+map();
         }
         if (current == 20 && partIII[current-1].clear != 1)
         {
@@ -798,7 +783,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+map();
         }
         if (current == 21 && partIII[current-1].clear != 1)
         {
@@ -813,7 +798,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+map();
         }
         if (current == 25 && partIII[current-1].clear != 1)
         {
@@ -829,7 +814,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+map();
         }
         if (current == 27 && partIII[current-1].clear != 1)
         {
@@ -845,7 +830,7 @@ HPmax = HPmax + 10;
         printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
         }
-
+map();
         }
         if (current == 26)
         {
@@ -853,7 +838,7 @@ HPmax = HPmax + 10;
         printf("\nThe mysterious Dark Lord of all of C Programming is actually....");
         printf("\nPROFESSOR BARI!");
         int win3;
-        monsters bari = {400,20,1,"Professor Bari"};
+        monsters bari = {300,16,1,"Professor Bari"};
         win3 = battle(bari.mskill,bari.mHP,bari.mATK,bari.mname);
         if (win3 != 0)
         return 0;
@@ -1104,10 +1089,11 @@ int main()
     if (EXP >= 10)
     {
         printf("Level Up!\n");
-        HP = HP + 10;
-        Magic = Magic + 2;
-        ATK = ATK + 2;
-        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        HPmax = HPmax + 10;
+        HP = HPmax;
+        Magic = Magic + 5;
+        ATK = ATK + 5;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,ATK,Magic);
         EXP = EXP-10;
     }
 
@@ -1243,6 +1229,7 @@ printf("\nYou enter the volcano...your next challenge awaits you...");
 x = part2();
 
 int castlepass;
+printf("\nThat's right! Go home EMeRG, now YOU\'RE drunk.");
 printf("\nThat was difficult");
 scanf("%c", string);
 printf("\nSeriously if your wife leaves you after all this that would really be unfortunate");
