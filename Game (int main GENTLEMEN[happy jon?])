@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-#include <time.h>
 
 typedef struct monsters monsters;
 struct monsters
@@ -933,14 +932,13 @@ int main()
     }
     if (answer != 'N' && answer != 'Y');
         printf("It's too early for you to not be following instructions...\n");
-    printf("\n\n");
+
+    printf("\n\n=================================================\n\n");
+    printf("\n");
     printf("We begin in the forest......(Press Enter to continue)");
     scanf("%c", string);
     printf("\n(Life Hack: Press Enter after text to advance the story. Such as now)\n");
     scanf("%c", string);
-
-
-
     printf("Sunlight peeks through the trees\n");
     scanf("%c", string);
     printf("The day began a few hours ago, but the light has only just come over the\nmountains\n");
@@ -1009,7 +1007,7 @@ int main()
 
     scanf(" %[^\n]s",Hero);
     printf("Congrats on having a name now bro. Your name is %s.", Hero);
-
+printf("\n\n=================================================\n\n");
     printf("\nThe Evil Lord's forces grow bolder by the day\n");
     scanf("%c", string);
     printf("\nYou have traveled for weeks and have never been this far from home before");
@@ -1035,6 +1033,7 @@ int main()
     scanf("%c", string);
     printf("\nYou approach her hut...");
     scanf("%c", string);
+    printf("\n\n=================================================\n\n");
     printf("\n\"No Solicitors\" reads the sign outside. Well it it is a good thing you did not\ncome here on business");
     scanf("%c", string);
     printf("\nThe hut looks old and dilapidated with the only sign of life being the smoke\nrising from the chimney");
@@ -1099,6 +1098,7 @@ int main()
 	printf("\nYou take the lens from the Oracle, and you know what you must do");
 	scanf("%c", string);
     printf("\nYou bid the Oracle a farewell vowing to return with the ancient treasure that\nshe requires\n");
+    printf("\n\n=================================================\n\n");
     printf("\nYou leave the Oracle's hut, and along the road you encounter a young boy who wishes to battle you.");
     monsters Joey = {10,1,10,"Youngster Joey"};
     EXP = EXP + battle(Joey.mskill,Joey.mHP,Joey.mATK,Joey.mname);
@@ -1155,9 +1155,9 @@ int main()
     scanf("%c", string);
     printf("\nStepping around the corner you see an average looking door and turn the handle. The door opens without incident and you walk into the temple...\n");
     scanf("%c", string);
-
+printf("\n\n=================================================\n\n");
 part1();
-
+printf("\n\n=================================================\n\n");
 printf("\n<To avoid repetitiveness and too much typing for me/reading for you, you\nfind yourself mysteriously back in the hut>");
 scanf("%c", string);
 printf("\n\"You got here quickly\" she says");
@@ -1189,7 +1189,7 @@ printf("\nThe world is dangerous, and you come closer to the danger with every s
 scanf("%c", string);
 
 /* Part II starts now! Fun! */
-
+printf("\n\n=================================================\n\n");
 printf("\nYou journey towards the castle on horseback");
 scanf("%c", string);
 printf("\nYou seemed to have found a horse...Good for you");
@@ -1228,6 +1228,7 @@ printf("\nIt reads the following: \"The path before you is a treacherous one. Sr
 scanf("%c", string);
 printf("\nA new challenge awaits you. You thank the innkeeper, pay him, and leave");
 scanf("%c", string);
+printf("\n\n=================================================\n\n");
 printf("\nDays turn into weeks and you finally approach the volcano that blocks the path to the Evil Overlord's Lair");
 scanf("%c", string);
 printf("\nA likely lair for a dragon...You see a door ahead");
@@ -1247,9 +1248,8 @@ printf("\n\n");
 printf("\nSUDDENLY the door vanishes!");
 scanf("%c", string);
 printf("\nYou enter the volcano...your next challenge awaits you...");
-
+printf("\n\n=================================================\n\n");
 part2();
-
 int castlepass;
 printf("\nThat's right! Go home EMeRG, now YOU\'RE drunk.");
 printf("\nThat was difficult");
@@ -1258,6 +1258,7 @@ printf("\nSeriously if your wife leaves you after all this that would really be 
 scanf("%c", string);
 printf("\nTheres no time to waste with such silly thoughts! You must enter the castle now! Hi ho Silver! Away!");
 scanf("%c", string);
+printf("\n\n=================================================\n\n");
 printf("\nWait a second... there's an electronic lock on the outside of the door...");
 do {
 printf("\nWhat was the password that old woman?\n");
@@ -1270,9 +1271,9 @@ printf("\n\nONWAAARD, SILVEEEER!");
 }
 } while (castlepass != 12345);
 printf("\nYou enter the great doors, only to discover \nthat this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
-
+printf("\n\n=================================================\n\n");
 part3();
-
+printf("\n\n=================================================\n\n");
 printf("\nCongratulations on beating the final boss! Good work!");
 scanf("%c", string);
 printf("\nYour wife is saved! Hooray!");
@@ -1293,7 +1294,6 @@ printf("Tough break. Looks like this was all for nothing. But hey! You had fun! 
 scanf("%c", string);
 
 printf("\n\n\nTHANKS FOR PLAYING!!!!");
-
 
 return(0);
 }
