@@ -1155,7 +1155,8 @@ int main()
     scanf("%c", string);
     printf("\nStepping around the corner you see an average looking door and turn the handle. The door opens without incident and you walk into the temple...\n");
     scanf("%c", string);
-    int x = part1();
+
+part1();
 
 printf("\n<To avoid repetitiveness and too much typing for me/reading for you, you\nfind yourself mysteriously back in the hut>");
 scanf("%c", string);
@@ -1247,7 +1248,7 @@ printf("\nSUDDENLY the door vanishes!");
 scanf("%c", string);
 printf("\nYou enter the volcano...your next challenge awaits you...");
 
-x = part2();
+part2();
 
 int castlepass;
 printf("\nThat's right! Go home EMeRG, now YOU\'RE drunk.");
@@ -1270,7 +1271,7 @@ printf("\n\nONWAAARD, SILVEEEER!");
 } while (castlepass != 12345);
 printf("\nYou enter the great doors, only to discover \nthat this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
 
-x = part3();
+part3();
 
 printf("\nCongratulations on beating the final boss! Good work!");
 scanf("%c", string);
@@ -1292,7 +1293,6 @@ printf("Tough break. Looks like this was all for nothing. But hey! You had fun! 
 scanf("%c", string);
 
 printf("\n\n\nTHANKS FOR PLAYING!!!!");
-
 
 
 return(0);
