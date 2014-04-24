@@ -2,6 +2,8 @@
 
 when visiting oracle, make sure \ns are consistent x
 
+need toupper() with first conversation with oracle
+
 fix stone slab loop -- looks like getchar() issue? x
 
 Line breaks acting up after choosing first direction x
