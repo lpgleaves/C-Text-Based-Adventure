@@ -729,7 +729,7 @@ HPmax = HPmax + 10;
               }
         if (current == 15 && partIII[current-1].clear != 1)
         {
-        monsters killerrabbit={50,35,10,"A small rabbit, with a killer streak a mile wide"};
+        monsters killerrabbit={50,35,10,"Killer Rabbit"};
         EXP = EXP + battle(killerrabbit.mskill,killerrabbit.mHP,killerrabbit.mATK,killerrabbit.mname);
         if (EXP >= 10)
         {
@@ -745,7 +745,7 @@ HPmax = HPmax + 10;
         }
         if (current == 16 && partIII[current-1].clear != 1)
         {
-        monsters zombie={30,10,10,"zombie - The Walking Dead"};
+        monsters zombie={30,10,10,"zombie"};
         EXP = EXP + battle(zombie.mskill,zombie.mHP,zombie.mATK,zombie.mname);
         if (EXP >= 10)
         {
@@ -793,7 +793,7 @@ map();
         }
         if (current == 21 && partIII[current-1].clear != 1)
         {
-        monsters xline = {70,4,10,"monster made entirely out of Construction Lines"};
+        monsters xline = {70,4,10,"Professor Shen's Construction Line"};
         EXP = EXP + battle(xline.mskill,xline.mHP,xline.mATK,xline.mname);
         if (EXP >= 10)
         {
