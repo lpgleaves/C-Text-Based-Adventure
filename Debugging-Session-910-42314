@@ -1,0 +1,49 @@
+"audacity to show his face in your" fix apostrophe
+
+when visiting oracle, make sure \ns are consistent
+
+fix stone slab loop -- looks like getchar() issue?
+
+Line breaks acting up after choosing first direction
+
+toupper() direction input
+
+more \ns after direction prompts
+
+exits part 1 early?!
+
+grammar check "password is 12345"-- needs period, semicolon
+
+spacing between map display and battle functions
+
+stopped working entirely when HP <= 0
+
+HP sometimes incorrectly displayed
+
+printf lines of "======================"? for the sake of neatness
+
+Can't go east from 0 in part 1 (probably a divisibility issue)
+
+exits when you get to spot 12
+
+Red Eyes Bkack Dragon ---> spelling pls
+
+battle "still doesn't entirely work"
+
+won't let you go south from 14 in part 2
+
+part 2 -- cow --> a room with, for some reason
+
+map before if/thens in part 2 (Mike will know)
+
+giant soldier of stone has SO MUCH 400 HP (Nerf Dimitri's monsters)
+
+battle function says you've won even if your HP got reduced to 0 and you died... battle function is so broken
+	magic and attack are switched printing
+
+oh my god Dimitri's monsters are way too strong
+
+part III starts in the wrong place
+
+A zombie is too long, zombie
+
