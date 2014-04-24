@@ -563,7 +563,7 @@ HPmax = HPmax + 10;
         {
         printf("\nYou hear hissing...\nIt's a booby trap!\nYou duck behind a rock as the chest explodes.\nClose one.");
         }
-                printf("\nYou stand in %s.",partII[current-1].desc);
+                printf("\nYou stand in %s.",partII[current].desc);
                 partII[current].clear = 1;
             if (current > 6)
                 printf("\nTo the North is %s.",partII[current-6].desc);
@@ -1010,7 +1010,7 @@ int main()
     scanf(" %[^\n]s",Hero);
     printf("Congrats on having a name now bro. Your name is %s.", Hero);
 printf("\n\n====================================================================\n\n");
-    printf("\nThe Evil Lord's forces grow bolder by the day\n");
+    printf("\nThe Evil Overlord's forces grow bolder by the day\n");
     scanf("%c", string);
     printf("\nYou have traveled for weeks and have never been this far from home before");
     scanf("%c", string);
@@ -1031,7 +1031,7 @@ printf("\n\n====================================================================
     printf("\nBut then he vanished with her as a show of force\n");
     printf("So now you journey to save the love of your life");
     scanf("%c", string);
-    printf("\nNone have ever found the entrance to the Evil Lords Fortress, so you journey to\nthe edge of the Kingdom to the Oracle who can tell you how");
+    printf("\nNone have ever found the entrance to the Evil Overlord's Fortress, so you journey to\nthe edge of the Kingdom to the Oracle who can tell you how");
     scanf("%c", string);
     printf("\nYou approach her hut...");
     scanf("%c", string);
@@ -1073,9 +1073,9 @@ printf("\n\n====================================================================
     scanf("%c", string);
     printf("\nThe floor creaks as you walk. Clearly no one has swept in ages");
     scanf("%c", string);
-    printf("\nShe says \"Now %s, what is it you seek. No one has been here for quite\nsome time\"\n",Hero);
+    printf("\nShe says \"Now %s, what is it you seek? No one has been here for quite\nsome time\"\n",Hero);
     scanf("%c", string);
-    printf("A)	I am on a quest to save my wife from the clutches of the Evil Lord\n");
+    printf("A)	I am on a quest to save my wife from the clutches of the Evil Overlord\n");
     printf("B)	You will help me old witch\n");
     scanf(" %c", &answer);
     answer = toupper(answer);
