@@ -82,7 +82,8 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
             }
         if (HP < 0)
             {
-        win = 0;
+            printf("\nThe %s deals a crippling blow to you.",monster);
+            win = 0;
             }
     } while (monsterHP > 0 && HP > 0);
     if (win == 1)
@@ -472,7 +473,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
                 if (current == 9 && partII[current-1].clear != 1)
         {
-        monsters BEWD = {20,20,30, "Blue Eyes White Dragon"};
+        monsters BEWD = {20,6,10, "Blue Eyes White Dragon"};
         EXP = EXP + battle(BEWD.mskill,BEWD.mHP,BEWD.mATK,BEWD.mname);
         if (EXP >= 10)
         {
