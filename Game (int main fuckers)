@@ -19,7 +19,7 @@ struct monsters
     int mHP;
     int mATK;
     int mskill;
-    char mname[25];
+    char mname[50];
 };
 
 char string[200];
@@ -153,8 +153,8 @@ case 1:
 {
 printf("\nYou stand in a valley. ");
 printf("\nYou are attacked!");
-monsters jynx = {8,6,7,"Jynx"};
-EXP = EXP + battle(jynx.mskill,jynx.mHP,jynx.mATK,jynx.mname);
+monsters geodude = {8,6,7,"Geodude"};
+EXP = EXP + battle(geodude.mskill,geodude.mHP,geodude.mATK,geodude.mname);
     if (EXP >= 10)
     {
         printf("Level Up!\n");
@@ -543,8 +543,8 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         if (current == 32 && keys == 3)
         {
         int win2;
-        //monsters boss2 = {};
-        //battle(boss2.mskill,boss2.mHP,boss2.mATK,boss2.mname);
+        monsters boss2 = {300,10,1,"EMeRG"};
+        win2 = battle(boss2.mskill,boss2.mHP,boss2.mATK,boss2.mname);
         if (win2 != 0)
             return 0;
         }
@@ -702,45 +702,154 @@ partIII[35].desc = "lava";
     do {
         current = location[r][c];
         map();
-        if (current == 6 && partIII[current-1].clear != 1)
+        if (current == 13 && partIII[current].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
-        //battle();
+        monsters flytrap={25,15,15,"A Venus Flytrap"};
+        EXP = EXP + battle(flytrap.mskill,flytrap.mHP,flytrap.mATK,flytrap.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
         }
-                if (current == 9 && partIII[current-1].clear != 1)
-        {
-        //monsters name {5,5,5,"Name"};
-        //battle();
+        printf("Your EXP is %d\n",EXP);
         }
-                if (current == 14 && partIII[current-1].clear != 1)
+        if (current == 14 && partIII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
-        //battle();
+        monsters blackknight={100,10,60,"The Black Knight"};
+        printf("\nYou hear a call in the distance.\n\"'Tis But a Scratch!\"\nThe Black Knight approaches!");
+        EXP = EXP + battle(blackknight.mskill,blackknight.mHP,blackknight.mATK,blackknight.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
         }
-                if (current == 16 && partIII[current-1].clear != 1)
-        {
-        //monsters name {5,5,5,"Name"};
-        //battle();
+        printf("Your EXP is %d\n",EXP);
         }
-                if (current == 21 && partIII[current-1].clear != 1)
+        if (current == 15 && partIII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
-        //battle();
+        monsters killerrabbit={15,20,100,"A small rabbit, with a killer streak a mile wide"};
+        EXP = EXP + battle(killerrabbit.mskill,killerrabbit.mHP,killerrabbit.mATK,killerrabbit.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
         }
-                if (current == 23 && partIII[current-1].clear != 1)
+        printf("Your EXP is %d\n",EXP);
+        }
+        if (current == 16 && partIII[current-1].clear != 1)
         {
-        //monsters name {5,5,5,"Name"};
-        //battle();
+        monsters zombie={25,10,30,"A zombie - The Walking Dead"};
+        EXP = EXP + battle(zombie.mskill,zombie.mHP,zombie.mATK,zombie.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
+        printf("Your EXP is %d\n",EXP);
+        }
+        if (current == 19 && partIII[current-1].clear != 1)
+        {
+        monsters mastering={200,10,50,"MasteringPhysics.com."};
+        EXP = EXP + battle(mastering.mskill,mastering.mHP,mastering.mATK,mastering.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
+        printf("Your EXP is %d\n",EXP);
+        }
+        if (current == 20 && partIII[current-1].clear != 1)
+        {
+        monsters xiaofan = {50,5,10,"Our Lovely TA Xiaofan"};
+        EXP = EXP + battle(xiaofan.mskill,xiaofan.mHP,xiaofan.mATK,xiaofan.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
+        printf("Your EXP is %d\n",EXP);
+        }
+        if (current == 21 && partIII[current-1].clear != 1)
+        {
+        monsters xline = {100,1,15,"monster made entirely out of Construction Lines"};
+        EXP = EXP + battle(xline.mskill,xline.mHP,xline.mATK,xline.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
+         printf("Your EXP is %d\n",EXP);
+        }
+        if (current == 25 && partIII[current-1].clear != 1)
+        {
+        monsters proE = {50,20,40,"Wildfire Pro-Engineer"};
+        EXP = EXP + battle(proE.mskill,proE.mHP,proE.mATK,proE.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
+        printf("Your EXP is %d\n",EXP);
+        }
+        if (current == 27 && partIII[current-1].clear != 1)
+        {
+        monsters thurston = {100,20,20,"mold from Thurston Hall"};
+        EXP = EXP + battle(thurston.mskill,thurston.mHP,thurston.mATK,thurston.mname);
+        if (EXP >= 10)
+        {
+        printf("Level Up!\n");
+        HP = HP + 10;
+        Magic = Magic + 2;
+        ATK = ATK + 2;
+        printf("New Stats:\nHP:%d\nATK:%d\nMagic:%d\n",HP,Magic,ATK);
+        EXP = EXP-10;
+        }
+         printf("Your EXP is %d\n",EXP);
         }
         if (current == 26)
         {
+        printf("\nPLOT TWIST!!!!");
+        printf("\nThe mysterious Dark Lord of all of C Programming is actually....");
+        printf("\nPROFESSOR BARI!");
         int win3;
-        //3win = bossbattle();
-        //boss battle();
-        //if (3win != 0)
-          //  return 0;
+        monsters bari = {500,40,1,"Professor Bari"};
+        win3 = battle(bari.mskill,bari.mHP,bari.mATK,bari.mname);
+        if (win3 != 0)
+        return 0;
         }
-        if (current == 28 && partIII[current-1].clear != 1)
+        if (current == 22 && partIII[current-1].clear != 1)
         {
         HP= HP + 5;
         printf("\nYou find a pub. In the middle of a volcano.\nYou enjoy a refreshing ale. HP is now %d.",HP);
@@ -748,12 +857,6 @@ partIII[35].desc = "lava";
         if (current == 28 && partIII[current-1].clear != 1)
         {
         printf("\nYou notice this chest seems too small, and avoid the booby trap.\nClose one.");
-        //booby trap monster
-        //battle();
-        }
-        if (current == 15 && partIII[current-1].clear != 1)
-        {
-        printf("\nYou hear hissing...\nIt's a booby trap!\nYou duck behind a rock as the chest explodes.\nClose one.");
         }
                 printf("\nYou stand in %s.",partIII[current-1].desc);
                 partIII[current-1].clear = 1;
@@ -1160,11 +1263,11 @@ printf("\nYour wife is saved! Hooray!");
 scanf("%c", string);
 printf("\nYou talk to your wife (imagine a conversation happening here)");
 scanf("%c", string);
-printf("\nIn an unexpected turn of events she has decided to stay and live with the Dark Lord! O no!");
+printf("\nIn an unexpected turn of events she has decided to stay and live with Professor Bari! O no!");
 scanf("%c", string);
 printf("Sorry but she doesn't want to have to deal with your parents anymore. Thanks mom and dad");
 scanf("%c", string);
-printf("\nThe Dark Lord and your girl live happily ever after in his beautiful castle with all his money and nice things");
+printf("\nProfessor Bari and your girl live happily ever after in his beautiful castle with all his money and nice things");
 scanf("%c", string);
 printf("\nAt least your parents and dog still love you");
 scanf("%c", string);
