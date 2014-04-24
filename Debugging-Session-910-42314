@@ -14,7 +14,7 @@ exits part 1 early?! x
 
 grammar check "password is 12345"-- needs period, semicolon x 
 
-spacing between map display and battle functions
+spacing between map display and battle functions x
 
 stopped working entirely when HP <= 0
 
@@ -22,35 +22,35 @@ HP sometimes incorrectly displayed x
 
 printf lines of "======================"? for the sake of neatness
 
-Can't go east from 0 in part 1 (probably a divisibility issue)
+Can't go east from 0 in part 1 (probably a divisibility issue) x
 
-exits when you get to spot 12
+exits when you get to spot 12 x
 
 Red Eyes Bkack Dragon ---> spelling pls x 
 
 battle "still doesn't entirely work" x?
 
-won't let you go south from 14 in part 2
+won't let you go south from 14 in part 2 x
 
-part 2 -- cow --> a room with, for some reason
+part 2 -- cow --> a room with, for some reason x
 
-map before if/thens in part 2 (Mike will know)
+map before if/thens in part 2 (Mike will know) x
 
-giant soldier of stone has SO MUCH 400 HP (Nerf Dimitri's monsters)
+giant soldier of stone has SO MUCH 400 HP (Nerf Dimitri's monsters) x
 
 battle function says you've won even if your HP got reduced to 0 and you died... battle function is so broken
-	magic and attack are switched printing
+	magic and attack are switched printing x
 
-oh my god Dimitri's monsters are way too strong
+oh my god Dimitri's monsters are way too strong x
 
-part III starts in the wrong place
+part III starts in the wrong place x
 
-A zombie is too long, zombie
+A zombie is too long, zombie x
 
-monster names not long enough
+monster names not long enough x
 
 "sight of a flannel-clad young man", you don't just stand in a dude, that's weird
 
--don't call Bari the dark lord, call him the evil lord
+-don't call Bari the dark lord, call him the evil lord x
 
--when you beat EMeRG a printf statement pops up saying "You have defeated EMeRG. Go home EMeRG youre drunk"
+-when you beat EMeRG a printf statement pops up saying "You have defeated EMeRG. Go home EMeRG youre drunk" x
