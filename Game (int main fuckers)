@@ -835,7 +835,7 @@ map();
         if (current == 26)
         {
         printf("\nPLOT TWIST!!!!");
-        printf("\nThe mysterious Dark Lord of all of C Programming is actually....");
+        printf("\nThe mysterious Evil Overlord of all of C Programming is actually....");
         printf("\nPROFESSOR BARI!");
         int win3;
         monsters bari = {300,16,1,"Professor Bari"};
@@ -1006,7 +1006,7 @@ int main()
     scanf("%c", string);
     printf("\nHowever, that delicate peace hangs in the balance as skirmishes have broken out along the border");
     scanf("%c", string);
-    printf("\nThe Dark Lord had the audacity to show his face in your Kingdom/’s Capitol to \nissue his ultimatum of war");
+    printf("\nThe Evil Overlord had the audacity to show his face in your Kingdom/’s Capitol to \nissue his ultimatum of war");
     scanf("%c", string);
     printf("\nThen he kidnapped your wife from you in the street...");
     scanf("%c", string);
@@ -1066,7 +1066,7 @@ int main()
 
     if(answer=='A')
         {
-         printf("\nThe Oracle responds \"Ah yes the Dark Lord is a formidable foe and no outsider\nhas ever entered his Fortress but I can help you\n");}
+         printf("\nThe Oracle responds \"Ah yes the Evil Overlord is a formidable foe and no outsider\nhas ever entered his Fortress but I can help you\n");}
     else if(answer=='B'){
          printf("\nThe Oracle responds \"Rude. But I will help you for it is what I do\"\n");}
 
@@ -1158,11 +1158,11 @@ printf("\n\n\"Ah yesssss. Goood gooooood\" the Oracle continues, pleased as punc
 scanf("%c", string);
 printf("\n\n\"Im looking for my wife\"");
 scanf("%c", string);
-printf("\n\"Oh yes sorry I must be thinking of someone else. Very well. Shes in the\nDark Lords castle. The password to which is 12345. Tread lightly for\nnone have ever made it past the gate before\"");
+printf("\n\"Oh yes sorry I must be thinking of someone else. Very well. Shes in the\nEvil Overlords castle. The password to which is 12345. Tread lightly for\nnone have ever made it past the gate before\"");
 scanf("%c", string);
 printf("\nReally? I find that hard to believe with such a simple password\" \n(you\'re very\nskeptical of this woman now)");
 scanf("%c", string);
-printf("\n\"No its true no one has ever guessed that before. Everyone assumes the Dark Lord to be much more of a trickster. Its pure genius. Now tell me more of your past traveler. This seems like an appropriate time to establish your back story...");
+printf("\n\"No its true no one has ever guessed that before. Everyone assumes the Evil Overlord to be much more of a trickster. Its pure genius. Now tell me more of your past traveler. This seems like an appropriate time to establish your back story...");
 scanf("%c", string);
 printf("\n\"No. No its not\"");
 scanf("%c", string);
@@ -1206,7 +1206,7 @@ printf("\nIt reads the following: \"The path before you is a treacherous one. Sr
 scanf("%c", string);
 printf("\nA new challenge awaits you. You thank the innkeeper, pay him, and leave");
 scanf("%c", string);
-printf("\nDays turn into weeks and you finally approach the volcano that blocks the path to the Dark Lord's Lair");
+printf("\nDays turn into weeks and you finally approach the volcano that blocks the path to the Evil Overlord's Lair");
 scanf("%c", string);
 printf("\nA likely lair for a dragon...You see a door ahead");
 scanf("%c", string);
