@@ -581,21 +581,21 @@ HPmax = HPmax + 10;
                 }
                 break;
             case 'S' :
-                if (current < 29 && current !=22 && current != 23 && current != 7)
+                if (current < 29 && current !=26 && current != 22 && current != 6 && current != 23)
                     {
                     r=r+1; }
                 else {
                     printf("\nSorry, you can't go south from here."); }
                 break;
             case 'E' :
-                if (((current)%6)!=0  && current != 33 && current != 33)
+                if (((current+1)%6)!=0  && current != 27 && current != 33)
                     {
                     c=c+1; }
                 else {
                     printf("\nSorry, you can't go east from here."); }
                 break;
             case 'W' :
-                if (((current-1) % 6)!=0  && current != 3 && current != 13 && current != 19 && current != 25)
+                if (((current) % 6)!=0  && current != 3 && current != 13 && current != 19 && current != 25)
                     {
                     c = c - 1;
                     }
@@ -868,28 +868,28 @@ map();
         switch (direction)
         {
             case 'N' :
-                if (current > 5 && current != 6 && current != 7 && current != 8)
+                if (current != 13 && current != 14 && current != 16 && current != 3)
                     r = r - 1;
                 else {
                     printf("\nSorry, you can't go north from here.");
                 }
                 break;
             case 'S' :
-                if (current < 29 && current !=22 && current != 23 && current != 7)
+                if (current < 24)
                     {
                     r=r+1; }
                 else {
                     printf("\nSorry, you can't go south from here."); }
                 break;
             case 'E' :
-                if (((current)%6)!=0  && current != 33 && current != 33)
+                if (((current+2)%6)!=0  && current != 3 && current != 9)
                     {
                     c=c+1; }
                 else {
                     printf("\nSorry, you can't go east from here."); }
                 break;
             case 'W' :
-                if (((current-1) % 6)!=0  && current != 3 && current != 13 && current != 19 && current != 25)
+                if (((current-2) % 6)!=0  && current != 3 && current != 9)
                     {
                     c = c - 1;
                     }
