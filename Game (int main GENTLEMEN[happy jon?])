@@ -442,7 +442,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
-        if (current == 34)
+        if (current == 33)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
