@@ -62,9 +62,9 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
                 default:
                     printf("\nThat's just not an option...");
             }
-        printf("\nThe %s has %d HP.",monster,monsterHP);
         if (monsterHP > 0)
             {
+                printf("\nThe %s has %d HP.",monster,monsterHP);
                 printf("\nThe %s attacks for %d damage!",monster,monsterATK);
                 HP = HP - monsterATK;
                 printf("\nYour HP is now %d\n",HP);
@@ -168,6 +168,7 @@ printf("\nYou stand next to a massive tree.");
 printf("\nThe tree grants you life!");
 HPmax = HPmax + 10;
 HP = HPmax;
+printf("\nYour new HP is %d",HPmax);
 printf("\nTo the South there are some flowers. ");
 printf("\nTo the East there is a dark forest. ");
 printf("\nTo the West there is a valley. ");
@@ -245,7 +246,7 @@ if (key1 != 1)
     printf("\nYou found the key!");
 }
 printf("\nYou have the key to the secret cave entrance!");
-printf("\nBring it to the cave in the SouthEast!");
+printf("\nBring it to the cave directly to the South!");
 printf("\nYou exit the tower.");
 printf("\nTo the North there is a forest. ");
 printf("\nTo the South there is a cave. ");
@@ -296,9 +297,10 @@ break;
 case 11:
 {
 printf("\nYou enter the cave.");
+printf("\nYou are pumped to get back to the Oracle with your key.");
 if(key1 == 1)
     return(0);
-printf("\nYou exit the cave, as you don't have the key yet.");
+printf("\n...Just kidding. You exit the cave, as you don't have the key yet.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
 printf("\nTo the East there is a cave. ");
@@ -350,7 +352,7 @@ break;
             case 'X' :
                 break;
             default:
-                printf("\nThat's not a direction...");
+                printf("\nThat's not a direction... \n\n");
         }
     } while (direction!='X');
     return 0;
@@ -374,7 +376,7 @@ partII[4].desc = "a creepy antechamber";
 partII[5].desc = "a wide room";
 partII[6].desc = "a dungeon entrance";
 partII[7].desc = "a dark hallway filled with cobwebs";
-partII[8].desc = "a shady figure in a room";
+partII[8].desc = "sight of a shady figure";
 partII[9].desc = "a deep cave pool";
 partII[10].desc = "a dark pool, faintly glowing";
 partII[11].desc = "a prison cell";
@@ -610,7 +612,7 @@ HPmax = HPmax + 10;
             case 'X' :
                 break;
             default:
-                printf("\nThat's not a direction...");
+                printf("\nThat's not a direction... \n\n");
         }
 }while (direction!='X');
 
@@ -642,7 +644,7 @@ partIII[10].desc = "some lava";
 partIII[11].desc = "some lava";
 partIII[12].desc = "some lava";
 partIII[13].desc = "a little rock, right in the corner and almost pushed into the lava, that vaguely resembles Danny DeVito";
-partIII[14].desc = "a flannel-clad young man; I think he's only here because it's still not cool... freaking hipsters";
+partIII[14].desc = "sight of a flannel-clad young man, freaking hipsters";
 partIII[15].desc = "the beginning of the end-- ahem, no, just the beginning of a really big open area in the bottom of this volcano";
 partIII[16].desc = "sight of Jennifer Grey. Somebody put Baby in the corner :(";
 partIII[17].desc = "lava on lava";
@@ -907,7 +909,7 @@ map();
             case 'X' :
                 break;
             default:
-                printf("\nThat's not a direction...");
+                printf("\nThat's not a direction... \n\n");
         }
         }while (direction!='X');
 }
@@ -1033,7 +1035,7 @@ printf("\n\n====================================================================
     printf("\nBut then he vanished with her as a show of force\n");
     printf("So now you journey to save the love of your life");
     scanf("%c", string);
-    printf("\nNone have ever found the entrance to the Evil Overlord's Fortress, so you journey to\nthe edge of the Kingdom to the Oracle who can tell you how");
+    printf("\nNone have ever found the entrance to the Evil Overlord's Fortress, so you journey to the edge of the Kingdom to the Oracle who can tell you how");
     scanf("%c", string);
     printf("\nYou approach her hut...");
     scanf("%c", string);
@@ -1129,6 +1131,7 @@ printf("\n\n====================================================================
     printf("\nB) Look around the area");
     printf("\nC) Take a nap\n");
     scanf(" %c", &answer);
+    answer = toupper(answer);
     printf("\n\n");
 
     if(answer=='A'){
@@ -1205,7 +1208,7 @@ printf("\nA) You do?");
 printf("\nB) <Run away before you have to pay him for your stay>");
 printf("\nC) Who is it from?\n");
 scanf(" %c", &answer);
-
+answer = toupper(answer);
 if(answer=='A'){
     printf("\nHe says \"Yes I do. Your friend the Oracle sent it\"");
     scanf("%c", string);
