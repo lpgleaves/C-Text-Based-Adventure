@@ -321,7 +321,7 @@ break;
         switch (direction)
         {
             case 'N' :
-                if (current > 5) {
+                if (current > 3) {
                     r = r - 1;
                 }
                 else {
@@ -336,7 +336,7 @@ break;
                     }
                 break;
             case 'E' :
-                if (((current+1)%4!=0) && current != 11) {
+                if (((current+1)%4!=0) && current != 12) {
                     c=c+1; }
                 else {
                     printf("\nSorry, you can't go east from here. Try another direction. (N/S/W) \n"); }
@@ -936,7 +936,7 @@ int main()
     {
         printf("It's too early for you to not be following instructions...\n");
     }
-	
+
     printf("\n\n====================================================================\n\n");
     printf("\n");
     printf("We begin in the forest......(Press Enter to continue)");
