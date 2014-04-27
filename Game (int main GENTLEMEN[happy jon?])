@@ -1257,7 +1257,7 @@ scanf("%c", string);
 printf("\nYou enter the volcano...your next challenge awaits you...");
 printf("\n\n====================================================================\n\n");
 part2();
-int castlepass;
+char castlepass[5];
 printf("\nThat's right! Go home EMeRG, now YOU\'RE drunk.");
 printf("\nThat was difficult");
 scanf("%c", string);
@@ -1267,16 +1267,18 @@ printf("\nTheres no time to waste with such silly thoughts! You must enter the c
 scanf("%c", string);
 printf("\n\n====================================================================\n\n");
 printf("\nWait a second... there's an electronic lock on the outside of the door...");
+int cpass;
 do {
 printf("\nWhat was the password that old woman?\n");
 scanf(" %s", &castlepass);
-if (castlepass != 12345) {
+cpass = strcmp(castlepass,"12345");
+if (cpass == 1) {
 printf("\nNo, I don't think that was it. Hmm...");
 }
 else {
 printf("\n\nONWAAARD, SILVEEEER!");
 }
-} while (castlepass != 12345);
+} while (cpass != 0);
 printf("\nYou enter the great doors, only to discover \nthat this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
 printf("\n\n====================================================================\n\n");
 part3();
