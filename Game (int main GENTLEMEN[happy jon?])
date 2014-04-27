@@ -1245,12 +1245,12 @@ scanf("%c", string);
 printf("\n\"Herein lies the great and terrible dragon! Only those who have proven\nthemselves worthy may pass through this door. If you can pass the three tests\nbelow, the GW dragon shall be waiting\"");
 printf("\n\"To prove yourself worthy of entrance, you must pass this final test (we lied there is only one test)\"");
 scanf("%c", string);
-int test2;
+char test2;
 do{
 printf("How many tests are there? :");
-scanf(" %d", &test2);
+scanf(" %c", &test2);
 printf("\n\n");
-}while(test2!=1);
+}while(test2!='1');
 
 printf("\nSUDDENLY the door vanishes!");
 scanf("%c", string);
@@ -1269,7 +1269,7 @@ printf("\n\n====================================================================
 printf("\nWait a second... there's an electronic lock on the outside of the door...");
 do {
 printf("\nWhat was the password that old woman?\n");
-scanf(" %d", &castlepass);
+scanf(" %s", &castlepass);
 if (castlepass != 12345) {
 printf("\nNo, I don't think that was it. Hmm...");
 }
