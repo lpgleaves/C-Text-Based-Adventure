@@ -533,7 +533,7 @@ HPmax = HPmax + 10;
         map();
         }
         }
-        if (current == 32 && keys2 == 3)
+        if (current == 31 && keys2 == 3)
         {
         int win2;
         monsters boss2 = {200,5,1,"EMeRG"};
@@ -595,7 +595,7 @@ HPmax = HPmax + 10;
                     printf("\nSorry, you can't go south from here."); }
                 break;
             case 'E' :
-                if (((current+1)%6)!=0  && current != 33)
+                if (((current+1)%6)!=0  && current != 33 && current!= 27)
                     {
                     c=c+1; }
                 else {
