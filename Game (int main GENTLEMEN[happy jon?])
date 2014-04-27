@@ -331,7 +331,7 @@ break;
                 }
                 break;
             case 'S' :
-                if (current<12) {
+                if (current<12 && current !=9 && current != 10) {
                     r=r+1; }
                 else {
                     printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) \n");
@@ -452,7 +452,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         keys++;
         printf("\nYou have %d keys!",keys);
         }
-        if (current == 6 && partII[current-1].clear != 1)
+        if (current == 8 && partII[current-1].clear != 1)
         {
         monsters DM = {30,15,10, "Dark Magician"};
         EXP = EXP + battle(DM.mskill,DM.mHP,DM.mATK,DM.mname);
@@ -569,9 +569,9 @@ HPmax = HPmax + 10;
                 partII[current].clear = 1;
             if (current > 6)
                 printf("\nTo the North is %s.",partII[current-6].desc);
-            if (current%6 !=0)
+            if ((current+1)%6 !=0)
                 printf("\nTo the East is %s.",partII[current].desc);
-            if ((current-1)%6 !=0)
+            if (current%6 !=0)
                 printf("\nTo the the West is %s.",partII[current-1].desc);
             if (current < 30 )
                 printf("\nTo the the South is %s.",partII[current+6].desc);
@@ -595,7 +595,7 @@ HPmax = HPmax + 10;
                     printf("\nSorry, you can't go south from here."); }
                 break;
             case 'E' :
-                if (((current+1)%6)!=0  && current != 27 && current != 33)
+                if (((current+1)%6)!=0  && current != 33)
                     {
                     c=c+1; }
                 else {
@@ -899,7 +899,7 @@ map();
                     printf("\nSorry, you can't go east from here."); }
                 break;
             case 'W' :
-                if (((current-2) % 6)!=0  && current != 3 && current != 9)
+                if (((current-1) % 6)!=0  && current != 3 && current != 9)
                     {
                     c = c - 1;
                     }
