@@ -437,17 +437,17 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     do {
         current = location[r][c];
         map();
-        if (current == 4 && partII[current-1].clear != 1)
+        if (current == 4)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
-        if (current == 34 && partII[current-1].clear != 1)
+        if (current == 34)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
-        if (current == 17 && partII[current-1].clear != 1)
+        if (current == 17)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
@@ -1060,7 +1060,7 @@ printf("\n\n====================================================================
     printf("\n  C) I am %s! I require your assistance o noble one",Hero);
     printf("\n  D) I h8 u\n\n");
     scanf("%c", &answer);
-
+    answer = toupper(answer);
     if(answer!='C'){
         printf("<You can't say that to the oracle that makes no sense>");
         scanf("%c", string);
