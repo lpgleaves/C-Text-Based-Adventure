@@ -1,0 +1,14 @@
+"sight of a flannel-clad young man", you don't just stand in a dude, that's weird
+
+make it say 0 HP for defeated enemies instead of something <0
+
+for push harder/look around/take a nap, need a toupper()
+
+huge tree --> print new health
+
+bring it to the cave --> south instead of southeast
+
+no south if 9 or 10 (part 1)
+
+"you journey to the edge of the kingdom" part 1, get rid of weird line break
+
