@@ -1282,7 +1282,7 @@ else {
 printf("\n\nONWAAARD, SILVEEEER!");
 }
 } while (cpass != 0);
-printf("\nYou enter the great doors, only to discover \nthat this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
+printf("\nYou enter the great doors, only to discover that this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
 printf("\n\n====================================================================\n\n");
 part3();
 printf("\n\n====================================================================\n\n");
