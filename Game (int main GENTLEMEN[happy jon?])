@@ -437,22 +437,22 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     do {
         current = location[r][c];
         map();
-        if (current == 4)
+        if (current == 4 && partII[current].clear != 1)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
-        if (current == 33)
+        if (current == 33 && partII[current].clear != 1)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
-        if (current == 17)
+        if (current == 17 && partII[current].clear != 1)
         {
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
-        if (current == 8 && partII[current-1].clear != 1)
+        if (current == 8 && partII[current].clear != 1)
         {
         monsters DM = {30,15,10, "Dark Magician"};
         EXP = EXP + battle(DM.mskill,DM.mHP,DM.mATK,DM.mname);
@@ -469,7 +469,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         }
 
         }
-                if (current == 9 && partII[current-1].clear != 1)
+                if (current == 9 && partII[current].clear != 1)
         {
         monsters BEWD = {26,10,10, "Blue Eyes White Dragon"};
         EXP = EXP + battle(BEWD.mskill,BEWD.mHP,BEWD.mATK,BEWD.mname);
@@ -485,7 +485,7 @@ HPmax = HPmax + 10;
         map();
         }
         }
-                if (current == 14 && partII[current-1].clear != 1)
+                if (current == 14 && partII[current].clear != 1)
         {
         monsters REBD = {28,16,10, "Red Eyes Black Dragon"};
         EXP = EXP + battle(REBD.mskill,REBD.mHP,REBD.mATK,REBD.mname);
@@ -501,7 +501,7 @@ HPmax = HPmax + 10;
         map();
         }
         }
-                if (current == 16 && partII[current-1].clear != 1)
+                if (current == 16 && partII[current].clear != 1)
         {
         monsters GSS = {100,5,10, "Giant Soldier of Stone"};
         EXP = EXP + battle(GSS.mskill,GSS.mHP,GSS.mATK,GSS.mname);
@@ -517,7 +517,7 @@ HPmax = HPmax + 10;
         map();
         }
         }
-                if (current == 21 && partII[current-1].clear != 1)
+                if (current == 21 && partII[current].clear != 1)
         {
         monsters DMG = {32,13,10, "Dark Magician Girl"};
         EXP = EXP + battle(DMG.mskill,DMG.mHP,DMG.mATK,DMG.mname);
@@ -542,26 +542,26 @@ HPmax = HPmax + 10;
         if (win2 != 0)
             return 0;
         }
-        if (current == 5 && partII[current-1].clear != 1)
+        if (current == 5 && partII[current].clear != 1)
         {
         ATK = ATK + 5;
         printf("\nYou found a new sheath for your sword!\n Your attack is now %d!",ATK);
         }
-        if (current == 24 && partII[current-1].clear != 1)
+        if (current == 24 && partII[current].clear != 1)
         {
         Magic = Magic + 5;
         printf("\nYou found a stick!\nI think it does magic!\nYour magic is now %d!",Magic);
         }
-        if (current == 26 && partII[current-1].clear != 1)
+        if (current == 26 && partII[current].clear != 1)
         {
         HP= HP + 5;
         printf("\nYou found a cow.\nYou eat the cow.\nYour health is now %d!\nThe cow's health is 0.\nBecause you ate it.\n.\n.\nYou monster.",HP);
         }
-        if (current == 23 && partII[current-1].clear != 1)
+        if (current == 23 && partII[current].clear != 1)
         {
         printf("\nYou read the sign, use logic, and avoid the booby trap.\nClose one.");
         }
-        if (current == 15 && partII[current-1].clear != 1)
+        if (current == 15 && partII[current].clear != 1)
         {
         printf("\nYou hear hissing...\nIt's a booby trap!\nYou duck behind a rock as the chest explodes.\nClose one.");
         }
