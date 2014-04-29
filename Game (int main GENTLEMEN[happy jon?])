@@ -62,9 +62,9 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
                 default:
                     printf("\nThat's just not an option...");
             }
+        printf("\nThe %s has %d HP.",monster,monsterHP);
         if (monsterHP > 0)
             {
-                printf("\nThe %s has %d HP.",monster,monsterHP);
                 printf("\nThe %s attacks for %d damage!",monster,monsterATK);
                 HP = HP - monsterATK;
                 printf("\nYour HP is now %d\n",HP);
@@ -168,7 +168,6 @@ printf("\nYou stand next to a massive tree.");
 printf("\nThe tree grants you life!");
 HPmax = HPmax + 10;
 HP = HPmax;
-printf("\nYour new HP is %d",HPmax);
 printf("\nTo the South there are some flowers. ");
 printf("\nTo the East there is a dark forest. ");
 printf("\nTo the West there is a valley. ");
@@ -180,7 +179,7 @@ printf("\nYou stand in the forest. ");
 printf("\nYou are attacked!");
 monsters pikachu = {15,5,10,"Pikachu"};
 EXP = EXP + battle(pikachu.mskill,pikachu.mHP,pikachu.mATK,pikachu.mname);
-    if (EXP == 10)
+    if (EXP = 10)
     {
         printf("Level Up!\n");
         HPmax = HPmax + 10;
@@ -246,7 +245,7 @@ if (key1 != 1)
     printf("\nYou found the key!");
 }
 printf("\nYou have the key to the secret cave entrance!");
-printf("\nBring it to the cave directly to the South!");
+printf("\nBring it to the cave in the SouthEast!");
 printf("\nYou exit the tower.");
 printf("\nTo the North there is a forest. ");
 printf("\nTo the South there is a cave. ");
@@ -297,10 +296,9 @@ break;
 case 11:
 {
 printf("\nYou enter the cave.");
-printf("\nYou are pumped to get back to the Oracle with your key.");
 if(key1 == 1)
     return(0);
-printf("\n...Just kidding. You exit the cave, as you don't have the key yet.");
+printf("\nYou exit the cave, as you don't have the key yet.");
 printf("\nTo the North there are some flowers. ");
 printf("\nTo the South there is an impassable mountain range. ");
 printf("\nTo the East there is a cave. ");
@@ -323,7 +321,7 @@ break;
         switch (direction)
         {
             case 'N' :
-                if (current > 3) {
+                if (current > 5) {
                     r = r - 1;
                 }
                 else {
@@ -331,14 +329,14 @@ break;
                 }
                 break;
             case 'S' :
-                if (current<12 && current !=9 && current != 10) {
+                if (current<12) {
                     r=r+1; }
                 else {
                     printf("\nSorry, you can't go south from here. Try another direction. (N/E/W) \n");
                     }
                 break;
             case 'E' :
-                if (((current+1)%4!=0) && current != 12) {
+                if (((current+1)%4!=0) && current != 11) {
                     c=c+1; }
                 else {
                     printf("\nSorry, you can't go east from here. Try another direction. (N/S/W) \n"); }
@@ -352,7 +350,7 @@ break;
             case 'X' :
                 break;
             default:
-                printf("\nThat's not a direction... \n\n");
+                printf("\nThat's not a direction...");
         }
     } while (direction!='X');
     return 0;
@@ -361,7 +359,7 @@ break;
 int part2()
 {
 int q;
-int keys2 = 0;
+int keys = 0;
 tiles partII[36];
 for (q=0;q<36;q++)
 {
@@ -376,7 +374,7 @@ partII[4].desc = "a creepy antechamber";
 partII[5].desc = "a wide room";
 partII[6].desc = "a dungeon entrance";
 partII[7].desc = "a dark hallway filled with cobwebs";
-partII[8].desc = "sight of a shady figure";
+partII[8].desc = "a shady figure in a room";
 partII[9].desc = "a deep cave pool";
 partII[10].desc = "a dark pool, faintly glowing";
 partII[11].desc = "a prison cell";
@@ -399,7 +397,7 @@ partII[27].desc = "a room covered in red stains";
 partII[28].desc = "a steep cliff face";
 partII[29].desc = "the pit of doom";
 partII[30].desc = "even more lava";
-partII[31].desc = "an huge slab of rock, near an equally large boss";
+partII[31].desc = "an huge slab of rock, and an equally large boss";
 partII[32].desc = "a lava waterfall";
 partII[33].desc = "a library";
 partII[34].desc = "a hole to the center of the planet";
@@ -437,22 +435,22 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     do {
         current = location[r][c];
         map();
-        if (current == 4)
+        if (current == 4 && partII[current-1].clear != 1)
         {
-        keys2++;
-        printf("\nYou have %d keys!",keys2);
+        keys++;
+        printf("\nYou have %d keys!",keys);
         }
-        if (current == 33)
+        if (current == 34 && partII[current-1].clear != 1)
         {
-        keys2++;
-        printf("\nYou have %d keys!",keys2);
+        keys++;
+        printf("\nYou have %d keys!",keys);
         }
-        if (current == 17)
+        if (current == 18 && partII[current-1].clear != 1)
         {
-        keys2++;
-        printf("\nYou have %d keys!",keys2);
+        keys++;
+        printf("\nYou have %d keys!",keys);
         }
-        if (current == 8 && partII[current-1].clear != 1)
+        if (current == 6 && partII[current-1].clear != 1)
         {
         monsters DM = {30,15,10, "Dark Magician"};
         EXP = EXP + battle(DM.mskill,DM.mHP,DM.mATK,DM.mname);
@@ -533,7 +531,7 @@ HPmax = HPmax + 10;
         map();
         }
         }
-        if (current == 31 && keys2 == 3)
+        if (current == 32 && keys == 3)
         {
         int win2;
         monsters boss2 = {200,5,1,"EMeRG"};
@@ -569,9 +567,9 @@ HPmax = HPmax + 10;
                 partII[current].clear = 1;
             if (current > 6)
                 printf("\nTo the North is %s.",partII[current-6].desc);
-            if ((current+1)%6 !=0)
-                printf("\nTo the East is %s.",partII[current].desc);
             if (current%6 !=0)
+                printf("\nTo the East is %s.",partII[current].desc);
+            if ((current-1)%6 !=0)
                 printf("\nTo the the West is %s.",partII[current-1].desc);
             if (current < 30 )
                 printf("\nTo the the South is %s.",partII[current+6].desc);
@@ -595,7 +593,7 @@ HPmax = HPmax + 10;
                     printf("\nSorry, you can't go south from here."); }
                 break;
             case 'E' :
-                if (((current+1)%6)!=0  && current != 33 && current!= 27)
+                if (((current+1)%6)!=0  && current != 27 && current != 33)
                     {
                     c=c+1; }
                 else {
@@ -612,7 +610,7 @@ HPmax = HPmax + 10;
             case 'X' :
                 break;
             default:
-                printf("\nThat's not a direction... \n\n");
+                printf("\nThat's not a direction...");
         }
 }while (direction!='X');
 
@@ -644,7 +642,7 @@ partIII[10].desc = "some lava";
 partIII[11].desc = "some lava";
 partIII[12].desc = "some lava";
 partIII[13].desc = "a little rock, right in the corner and almost pushed into the lava, that vaguely resembles Danny DeVito";
-partIII[14].desc = "sight of a flannel-clad young man, freaking hipsters";
+partIII[14].desc = "a flannel-clad young man; I think he's only here because it's still not cool... freaking hipsters";
 partIII[15].desc = "the beginning of the end-- ahem, no, just the beginning of a really big open area in the bottom of this volcano";
 partIII[16].desc = "sight of Jennifer Grey. Somebody put Baby in the corner :(";
 partIII[17].desc = "lava on lava";
@@ -899,7 +897,7 @@ map();
                     printf("\nSorry, you can't go east from here."); }
                 break;
             case 'W' :
-                if (((current-1) % 6)!=0  && current != 3 && current != 9)
+                if (((current-2) % 6)!=0  && current != 3 && current != 9)
                     {
                     c = c - 1;
                     }
@@ -909,7 +907,7 @@ map();
             case 'X' :
                 break;
             default:
-                printf("\nThat's not a direction... \n\n");
+                printf("\nThat's not a direction...");
         }
         }while (direction!='X');
 }
@@ -934,10 +932,8 @@ int main()
     {
         printf("You don't get to say no\n");
     }
-    if (answer != 'N' && answer != 'Y')
-    {
+    if (answer != 'N' && answer != 'Y');
         printf("It's too early for you to not be following instructions...\n");
-    }
 
     printf("\n\n====================================================================\n\n");
     printf("\n");
@@ -1035,7 +1031,7 @@ printf("\n\n====================================================================
     printf("\nBut then he vanished with her as a show of force\n");
     printf("So now you journey to save the love of your life");
     scanf("%c", string);
-    printf("\nNone have ever found the entrance to the Evil Overlord's Fortress, so you journey to the edge of the Kingdom to the Oracle who can tell you how");
+    printf("\nNone have ever found the entrance to the Evil Overlord's Fortress, so you journey to\nthe edge of the Kingdom to the Oracle who can tell you how");
     scanf("%c", string);
     printf("\nYou approach her hut...");
     scanf("%c", string);
@@ -1131,7 +1127,6 @@ printf("\n\n====================================================================
     printf("\nB) Look around the area");
     printf("\nC) Take a nap\n");
     scanf(" %c", &answer);
-    answer = toupper(answer);
     printf("\n\n");
 
     if(answer=='A'){
@@ -1208,7 +1203,7 @@ printf("\nA) You do?");
 printf("\nB) <Run away before you have to pay him for your stay>");
 printf("\nC) Who is it from?\n");
 scanf(" %c", &answer);
-answer = toupper(answer);
+
 if(answer=='A'){
     printf("\nHe says \"Yes I do. Your friend the Oracle sent it\"");
     scanf("%c", string);
@@ -1245,19 +1240,19 @@ scanf("%c", string);
 printf("\n\"Herein lies the great and terrible dragon! Only those who have proven\nthemselves worthy may pass through this door. If you can pass the three tests\nbelow, the GW dragon shall be waiting\"");
 printf("\n\"To prove yourself worthy of entrance, you must pass this final test (we lied there is only one test)\"");
 scanf("%c", string);
-char test2;
+int test2;
 do{
 printf("How many tests are there? :");
-scanf(" %c", &test2);
+scanf(" %d", &test2);
 printf("\n\n");
-}while(test2!='1');
+}while(test2!=1);
 
 printf("\nSUDDENLY the door vanishes!");
 scanf("%c", string);
 printf("\nYou enter the volcano...your next challenge awaits you...");
 printf("\n\n====================================================================\n\n");
 part2();
-char castlepass[5];
+int castlepass;
 printf("\nThat's right! Go home EMeRG, now YOU\'RE drunk.");
 printf("\nThat was difficult");
 scanf("%c", string);
@@ -1267,18 +1262,16 @@ printf("\nTheres no time to waste with such silly thoughts! You must enter the c
 scanf("%c", string);
 printf("\n\n====================================================================\n\n");
 printf("\nWait a second... there's an electronic lock on the outside of the door...");
-int cpass;
 do {
 printf("\nWhat was the password that old woman?\n");
-scanf(" %s", &castlepass);
-cpass = strcmp(castlepass,"12345");
-if (cpass == 1) {
+scanf(" %d", &castlepass);
+if (castlepass != 12345) {
 printf("\nNo, I don't think that was it. Hmm...");
 }
 else {
 printf("\n\nONWAAARD, SILVEEEER!");
 }
-} while (cpass != 0);
+} while (castlepass != 12345);
 printf("\nYou enter the great doors, only to discover \nthat this castle is actually just cut into another volcano.\nNo villains have creativity anymore...");
 printf("\n\n====================================================================\n\n");
 part3();
