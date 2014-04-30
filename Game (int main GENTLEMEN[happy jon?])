@@ -570,7 +570,7 @@ HPmax = HPmax + 10;
             if (current > 6)
                 printf("\nTo the North is %s.",partII[current-6].desc);
             if ((current+1)%6 !=0)
-                printf("\nTo the East is %s.",partII[current].desc);
+                printf("\nTo the East is %s.",partII[current+1].desc);
             if (current%6 !=0)
                 printf("\nTo the the West is %s.",partII[current-1].desc);
             if (current < 30 )
@@ -868,7 +868,7 @@ map();
                 printf("\nYou stand in %s.",partIII[current].desc);
                 partIII[current-1].clear = 1;
             if (current > 6)
-                printf("\nTo the North is %s.",partIII[current-7].desc);
+                printf("\nTo the North is %s.",partIII[current-6].desc);
             if (current%6 !=0)
                 printf("\nTo the East is %s.",partIII[current+1].desc);
             if ((current-1)%6 !=0)
