@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
+// Monster struct, allows for the creation of monsters for the battle function
 typedef struct monsters monsters;
 struct monsters
 {
@@ -10,6 +11,7 @@ struct monsters
     char mname[50];
 };
 
+// User global variables
 char string[200];
 int HP;
 int HPmax;
@@ -18,7 +20,7 @@ int ATK;
 int EXP;
 char Hero[50];
 
-
+// Structure for map tiles
 typedef struct tiles tiles;
 struct tiles
 {
@@ -27,9 +29,10 @@ char *desc;
 int clear;
 };
 
-
+// Battle function, called upon in each Part functions
 int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
 {
+// Variables for inside battle function, take the place for values taken in
     int EXPadd;
     int win = 1;
     char monster[25];
@@ -44,6 +47,7 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
 
     do
     {
+// Allow user to choose attack styles
         printf("Press 'a' to melee attack or 'm' to use magic.\n");
         scanf(" %c",&battlechoice);
         switch (battlechoice)
@@ -62,6 +66,7 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
                 default:
                     printf("\nThat's just not an option...");
             }
+// Outputs damage notification after each round of attacks
         if (monsterHP > 0)
             {
                 printf("\nThe %s has %d HP.",monster,monsterHP);
@@ -74,6 +79,7 @@ int battle (int MSkillIn, int MHPin, int MATKin,char MNameIn[25])
             printf("\nThe %s deals a crippling blow to you.",monster);
             win = 0;
             }
+// Win condition
     } while (monsterHP > 0 && HP > 0);
     if (win == 1)
     {
@@ -90,12 +96,13 @@ return(EXPadd);
 }
 
 
-
+// First part of our story, where it all begins
 int part1()
 {
     int i, j, x, current, r, c, completeQ = 0,key1 = 0;
     int location[4][4];
     char direction;
+// 4x4 map function for part one
     void map()
 {
     int i,j;
@@ -111,6 +118,7 @@ int part1()
         printf("\n");
     }
 }
+// Descriptions for surrounding area
     x = 0;
     for(i = 0; i < 4; ++i)
     {
@@ -317,8 +325,11 @@ printf("\nYou may only go North from here, back to the lake. ");
 break;
 }
 }
+// Allow user to choose where they want to go, input direction as a char variable
         printf("\nWhat direction would you like to go (N/S/E/W)? ");
         scanf(" %c", &direction);
+// Sanitizing case for movement input
+
         direction = toupper(direction);
         switch (direction)
         {
@@ -358,6 +369,7 @@ break;
     return 0;
 }
 
+// Function for part two of our quest
 int part2()
 {
 int q;
@@ -368,6 +380,7 @@ for (q=0;q<36;q++)
 partII[q].location = q;
 partII[q].clear = 0;
 }
+// tile descriptions for part 2, used in procedural generation of our map
 partII[0].desc = "some rocky cliffs";
 partII[1].desc = "a few impassable mountains";
 partII[2].desc = "a cliff of sharp rocks";
@@ -408,6 +421,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     int i, j, x, current, r, c, completeQ = 0;
     int location[6][6];
     char direction;
+// Map array for part two
     void map()
     {
     printf("\n");
@@ -434,6 +448,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
     }
     r = 1;
     c = 0;
+// Key events for part two puzzle
     do {
         current = location[r][c];
         map();
@@ -452,6 +467,7 @@ partII[35].desc = "a vacuum. The lack of matter, not a Dust Devil";
         keys2++;
         printf("\nYou have %d keys!",keys2);
         }
+// Initialize a battle
         if (current == 8 && partII[current].clear != 1)
         {
         monsters DM = {30,15,10, "Dark Magician"};
@@ -578,6 +594,7 @@ HPmax = HPmax + 10;
     printf("\nWhat direction would you like to go (N/S/E/W)? ");
         scanf(" %c", &direction);
         direction = toupper(direction);
+// Map edge definitions
         switch (direction)
         {
             case 'N' :
@@ -619,7 +636,7 @@ HPmax = HPmax + 10;
 return 0;
 }
 
-
+// Function for part three
 int part3()
 {
 int z;
@@ -630,6 +647,7 @@ for (z=0;z<36;z++)
 partIII[z].location = z;
 partIII[z].clear = 0;
 }
+// Tiles for procedural definition of surrounding area
 partIII[0].desc = "some lava";
 partIII[1].desc = "yet more lava";
 partIII[2].desc = "some lava";
@@ -695,6 +713,7 @@ partIII[35].desc = "lava";
     }
     r = 0;
     c = 3;
+// Monster stats for input into battle function
     do {
         current = location[r][c];
         map();
@@ -917,6 +936,7 @@ map();
         }while (direction!='X');
 }
 
+// Int main function, contains all the rest of our functions and story text
 int main()
 {
     int counter;
@@ -973,6 +993,7 @@ int main()
     printf("   K)	Kamikaze (extra Attack)\n\n");
     printf("Which class would you like to be? : ");
 
+// Class selection
     char hclass;
     int EXP = 0;
     scanf(" %c", &hclass);
@@ -1109,6 +1130,7 @@ printf("\n\n====================================================================
     printf("\nYou bid the Oracle a farewell vowing to return with the ancient treasure that\nshe requires\n");
     printf("\n\n====================================================================\n\n");
     printf("\nYou leave the Oracle's hut, and along the road you encounter a young boy who wishes to battle you.");
+// Pokemon jokes, because Pokemon is awesome
     monsters Joey = {10,1,10,"Youngster Joey"};
     EXP = EXP + battle(Joey.mskill,Joey.mHP,Joey.mATK,Joey.mname);
     if (EXP >= 10)
